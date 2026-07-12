@@ -400,6 +400,146 @@
     text-decoration:none;
   }
   .day-list-points a:hover{text-decoration:underline;}
+
+  /* ---------- TRANSLATE TAB ---------- */
+  .translate-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px;
+  }
+  .lang-row{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:12px;
+  }
+  .lang-row select{
+    flex:1;
+    font-family:inherit;
+    font-size:13.5px; font-weight:600;
+    color:var(--ink);
+    background:var(--sand);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:9px 10px;
+    appearance:none;
+  }
+  .swap-btn{
+    width:34px;height:34px;flex-shrink:0;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--sand);
+    color:var(--ink);
+    font-size:15px;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .swap-btn:active{background:var(--sand-deep);}
+  #translateInput{
+    width:100%;
+    min-height:90px;
+    font-family:inherit;
+    font-size:14.5px;
+    color:var(--ink);
+    background:var(--sand);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px;
+    resize:vertical;
+    box-sizing:border-box;
+  }
+  .translate-btn{
+    width:100%;
+    margin-top:10px;
+    font-family:inherit;
+    font-size:14px; font-weight:700;
+    color:#fff;
+    background:var(--rust);
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    cursor:pointer;
+  }
+  .translate-btn:active{opacity:.85;}
+  .translate-result{
+    margin-top:14px;
+    background:var(--sand);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px;
+    font-size:15px;
+    color:var(--ink);
+    min-height:28px;
+    white-space:pre-wrap;
+    position:relative;
+  }
+  .translate-result.placeholder{color:var(--ink-soft); font-size:13px;}
+  .copy-btn{
+    position:absolute; top:8px; right:8px;
+    font-size:11px; font-weight:700;
+    color:var(--ink-soft);
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:4px 8px;
+    cursor:pointer;
+  }
+  .translate-note{
+    margin-top:10px;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+  .phrasebook-cat{
+    font-size:13px; font-weight:700; color:var(--ink);
+    margin:22px 0 10px;
+  }
+  .phrase-item{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px 12px;
+    margin-bottom:8px;
+  }
+  .phrase-zh{font-size:13.5px; font-weight:700; color:var(--ink);}
+  .phrase-local{font-size:14px; color:var(--rust); margin-top:3px; font-weight:600;}
+  .phrase-pron{font-size:11.5px; color:var(--ink-soft); margin-top:2px;}
+
+  .input-row{
+    display:flex; gap:8px; align-items:flex-end;
+  }
+  .input-row textarea{flex:1;}
+  .mic-btn{
+    width:44px;height:44px;flex-shrink:0;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--sand);
+    color:var(--ink);
+    font-size:18px;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .mic-btn.recording{
+    background:var(--rust);
+    color:#fff;
+    animation:pulse 1.2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(181,80,45,.5);}
+    70%{box-shadow:0 0 0 10px rgba(181,80,45,0);}
+    100%{box-shadow:0 0 0 0 rgba(181,80,45,0);}
+  }
+  .speak-btn{
+    font-size:13px;
+    color:var(--ink-soft);
+    background:transparent;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:4px 8px;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .speak-btn:active{background:var(--sand-deep);}
+  .phrase-item{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+  .phrase-text{flex:1; min-width:0;}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 </head>
@@ -437,6 +577,7 @@
   <button class="tab-btn" data-tab="todo">待辦事項<span class="badge" id="todoBadge">0</span></button>
   <button class="tab-btn" data-tab="packing">行李清單<span class="badge" id="packingBadge">0</span></button>
   <button class="tab-btn" data-tab="map">地圖</button>
+  <button class="tab-btn" data-tab="translate">翻譯</button>
   <button class="tab-btn" data-tab="info">實用資訊</button>
 </nav>
 
@@ -478,6 +619,45 @@
       <span><i style="background:#23514E"></i>首爾</span>
     </div>
     <div id="dayList" style="margin-top:18px;"></div>
+  </section>
+
+  <!-- ================= TRANSLATE ================= -->
+  <section class="panel" id="panel-translate">
+    <div class="translate-card">
+      <div class="lang-row">
+        <select id="langFrom">
+          <option value="zh-TW">中文</option>
+          <option value="mn">蒙古文</option>
+          <option value="en">英文</option>
+          <option value="ko">韓文</option>
+        </select>
+        <button class="swap-btn" id="swapLangBtn" title="交換語言">⇄</button>
+        <select id="langTo">
+          <option value="mn">蒙古文</option>
+          <option value="zh-TW">中文</option>
+          <option value="en">英文</option>
+          <option value="ko">韓文</option>
+        </select>
+      </div>
+      <div class="input-row">
+        <textarea id="translateInput" placeholder="輸入想翻譯的文字，或按🎤錄音…"></textarea>
+        <button class="mic-btn" id="micBtn" title="語音輸入">🎤</button>
+      </div>
+      <button class="translate-btn" id="translateBtn">翻譯</button>
+      <div class="translate-result placeholder" id="translateResult">翻譯結果會顯示在這裡</div>
+      <div class="translate-note">使用免費翻譯服務(MyMemory)，需要網路連線；蒙古文為小眾語言，翻譯品質僅供參考，重要溝通建議搭配下方常用短句或請當地人協助。語音輸入／播放需使用 Chrome 瀏覽器並允許麥克風權限；多數裝置不支援蒙古語錄音或發音，此時可改用文字輸入、給對方看畫面。</div>
+    </div>
+
+    <div class="phrasebook-cat">🙋 打招呼與基本禮貌</div>
+    <div id="phrasebook-greeting"></div>
+    <div class="phrasebook-cat">🍜 餐廳與飲食</div>
+    <div id="phrasebook-food"></div>
+    <div class="phrasebook-cat">🛍️ 購物與殺價</div>
+    <div id="phrasebook-shopping"></div>
+    <div class="phrasebook-cat">🚕 交通與方向</div>
+    <div id="phrasebook-transport"></div>
+    <div class="phrasebook-cat">🆘 緊急狀況</div>
+    <div id="phrasebook-emergency"></div>
   </section>
 
   <!-- ================= INFO ================= -->
@@ -1008,6 +1188,225 @@ function renderDayList(){
 }
 renderDayList();
 
+/* ---------------- TRANSLATE ---------------- */
+const phrasebook = {
+  greeting: [
+    {zh:"你好", local:"Сайн байна уу", pron:"sain bai-na uu"},
+    {zh:"謝謝", local:"Баярлалаа", pron:"bayar-la-laa"},
+    {zh:"對不起", local:"Уучлаарай", pron:"uu-chla-rai"},
+    {zh:"再見", local:"Баяртай", pron:"bayar-tai"},
+    {zh:"是／好", local:"Тийм", pron:"tiim"},
+    {zh:"不是／不", local:"Үгүй", pron:"ugui"},
+  ],
+  food: [
+    {zh:"請給我菜單", local:"Цэсээ өгөөч", pron:"tse-see u-guuch"},
+    {zh:"這個多少錢？", local:"Энэ хэдэн төгрөг вэ?", pron:"en heden tugrug ve"},
+    {zh:"好吃", local:"Амттай", pron:"amt-tai"},
+    {zh:"我不吃辣", local:"Би халуун ногоо иддэггүй", pron:"bi haluun nogoo id-deg-gui"},
+    {zh:"買單", local:"Тооцоо бодъё", pron:"too-tsoo bod-yo"},
+  ],
+  shopping: [
+    {zh:"太貴了", local:"Үнэтэй байна", pron:"un-e-tei bai-na"},
+    {zh:"可以便宜一點嗎？", local:"Хямдруулж болох уу?", pron:"hyam-druulj bolokh uu"},
+    {zh:"我要買這個", local:"Би үүнийг авъя", pron:"bi uuniig av-ya"},
+    {zh:"可以刷卡嗎？", local:"Картаар төлж болох уу?", pron:"kart-aar tulj bolokh uu"},
+  ],
+  transport: [
+    {zh:"廁所在哪裡？", local:"Жорлон хаана байна вэ?", pron:"jorlon haa-na bai-na ve"},
+    {zh:"請帶我去這裡", local:"Намайг энд хүргэж өгөөч", pron:"na-maig end khur-gej u-guuch"},
+    {zh:"多久會到？", local:"Хэр удах вэ?", pron:"her u-dakh ve"},
+    {zh:"請停車", local:"Зогсооч", pron:"zog-sooch"},
+  ],
+  emergency: [
+    {zh:"救命！", local:"Тусална уу!", pron:"tus-lana uu"},
+    {zh:"我需要醫生", local:"Надад эмч хэрэгтэй", pron:"na-dad emch khe-reg-tei"},
+    {zh:"請叫警察", local:"Цагдаа дуудаж өгөөч", pron:"tsag-daa duu-daj u-guuch"},
+    {zh:"我迷路了", local:"Би төөрсөн", pron:"bi tuur-suun"},
+  ],
+};
+
+function renderPhrasebook(){
+  Object.keys(phrasebook).forEach(cat=>{
+    const el = document.getElementById('phrasebook-'+cat);
+    if(!el) return;
+    el.innerHTML = '';
+    phrasebook[cat].forEach(p=>{
+      const item = document.createElement('div');
+      item.className = 'phrase-item';
+      item.innerHTML = `
+        <div class="phrase-text">
+          <div class="phrase-zh">${p.zh}</div>
+          <div class="phrase-local">${p.local}</div>
+          <div class="phrase-pron">${p.pron}</div>
+        </div>
+        <button class="speak-btn">🔊</button>
+      `;
+      item.querySelector('.speak-btn').addEventListener('click', ()=>speakText(p.local, 'mn'));
+      el.appendChild(item);
+    });
+  });
+}
+renderPhrasebook();
+
+/* ---------------- SPEECH: TTS ---------------- */
+const speechLangMap = {'zh-TW':'zh-TW', 'mn':'mn-MN', 'en':'en-US', 'ko':'ko-KR'};
+
+let cachedVoices = [];
+function loadVoices(){
+  if('speechSynthesis' in window){
+    cachedVoices = window.speechSynthesis.getVoices();
+  }
+}
+if('speechSynthesis' in window){
+  loadVoices();
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+function findVoice(langCode){
+  if(!cachedVoices.length) loadVoices();
+  const exact = cachedVoices.find(v=>v.lang === langCode);
+  if(exact) return exact;
+  const prefix = langCode.split('-')[0];
+  return cachedVoices.find(v=>v.lang && v.lang.split('-')[0] === prefix) || null;
+}
+
+function speakText(text, langCode){
+  if(!text) return;
+  if(!('speechSynthesis' in window)){
+    alert('這台裝置／瀏覽器不支援語音播放功能。');
+    return;
+  }
+  const targetLang = speechLangMap[langCode] || 'en-US';
+  const voice = findVoice(targetLang);
+  if(!voice){
+    alert('這台裝置目前沒有「' + (langCode==='mn'?'蒙古語':targetLang) + '」的語音包，無法播放發音，建議改用文字或常用短句手冊直接給對方看。');
+    return;
+  }
+  window.speechSynthesis.cancel();
+  setTimeout(()=>{
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = targetLang;
+    utter.voice = voice;
+    utter.onerror = ()=>{
+      alert('播放失敗，請再試一次，或改用文字／常用短句手冊直接給對方看。');
+    };
+    window.speechSynthesis.speak(utter);
+  }, 80);
+}
+
+/* ---------------- SPEECH: recognition (mic input) ---------------- */
+let recognizing = false;
+let activeRecognition = null;
+
+document.getElementById('micBtn').addEventListener('click', ()=>{
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const micBtn = document.getElementById('micBtn');
+  if(!SR){
+    alert('這個瀏覽器不支援語音輸入，建議改用 Chrome 瀏覽器，或直接用打字輸入。');
+    return;
+  }
+  if(recognizing && activeRecognition){
+    activeRecognition.stop();
+    return;
+  }
+  const recognition = new SR();
+  activeRecognition = recognition;
+  recognition.lang = speechLangMap[document.getElementById('langFrom').value] || 'zh-TW';
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  recognition.onstart = ()=>{
+    recognizing = true;
+    micBtn.classList.add('recording');
+    micBtn.textContent = '⏹';
+  };
+  recognition.onend = ()=>{
+    recognizing = false;
+    micBtn.classList.remove('recording');
+    micBtn.textContent = '🎤';
+  };
+  recognition.onerror = (e)=>{
+    recognizing = false;
+    micBtn.classList.remove('recording');
+    micBtn.textContent = '🎤';
+    if(e.error === 'language-not-supported' || e.error === 'no-speech'){
+      alert('這個語言的語音輸入目前無法使用(蒙古文在多數瀏覽器尚未支援語音辨識)，請改用打字輸入。');
+    } else if(e.error === 'not-allowed'){
+      alert('請允許瀏覽器使用麥克風權限後再試一次。');
+    }
+  };
+  recognition.onresult = (e)=>{
+    const transcript = e.results[0][0].transcript;
+    const ta = document.getElementById('translateInput');
+    ta.value = ta.value ? ta.value + ' ' + transcript : transcript;
+  };
+  recognition.start();
+});
+
+document.getElementById('swapLangBtn').addEventListener('click', ()=>{
+  const from = document.getElementById('langFrom');
+  const to = document.getElementById('langTo');
+  const tmp = from.value;
+  from.value = to.value;
+  to.value = tmp;
+});
+
+document.getElementById('translateBtn').addEventListener('click', async ()=>{
+  const text = document.getElementById('translateInput').value.trim();
+  const resultEl = document.getElementById('translateResult');
+  if(!text){
+    resultEl.textContent = '請先輸入文字';
+    resultEl.classList.add('placeholder');
+    return;
+  }
+  const from = document.getElementById('langFrom').value;
+  const to = document.getElementById('langTo').value;
+  resultEl.textContent = '翻譯中…';
+  resultEl.classList.add('placeholder');
+  try{
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const translated = data && data.responseData && data.responseData.translatedText;
+    if(translated){
+      resultEl.classList.remove('placeholder');
+      resultEl.innerHTML = '';
+      const span = document.createElement('span');
+      span.textContent = translated;
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'copy-btn';
+      copyBtn.textContent = '複製';
+      copyBtn.style.right = '54px';
+      copyBtn.onclick = ()=>{
+        navigator.clipboard.writeText(translated).then(()=>{
+          copyBtn.textContent = '已複製';
+          setTimeout(()=>copyBtn.textContent='複製', 1500);
+        });
+      };
+      const speakBtn = document.createElement('button');
+      speakBtn.className = 'copy-btn';
+      speakBtn.textContent = '🔊';
+      speakBtn.onclick = ()=>speakText(translated, to);
+      resultEl.appendChild(span);
+      resultEl.appendChild(copyBtn);
+      resultEl.appendChild(speakBtn);
+
+      const gLink = document.createElement('div');
+      gLink.style.marginTop = '10px';
+      const gtUrl = 'https://translate.google.com/?sl=' + encodeURIComponent(from) +
+        '&tl=' + encodeURIComponent(to) + '&text=' + encodeURIComponent(text) + '&op=translate';
+      gLink.innerHTML = `<a href="${gtUrl}" target="_blank" rel="noopener" style="color:var(--sky-deep); font-size:12px;">🔗 這裡發不出聲音？在 Google 翻譯開啟(通常能唸出來，含蒙古語)</a>`;
+      resultEl.appendChild(gLink);
+    } else {
+      resultEl.classList.add('placeholder');
+      resultEl.textContent = '翻譯失敗，請確認網路連線後再試一次';
+    }
+  } catch(err){
+    resultEl.classList.add('placeholder');
+    resultEl.textContent = '翻譯失敗，請確認網路連線後再試一次';
+  }
+});
+
 function initTripMap(){
   if(tripMap) return;
   if(typeof L === 'undefined'){
@@ -1189,7 +1588,19 @@ loadPacking();
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load', ()=>{
-    navigator.serviceWorker.register('sw.js').catch(()=>{});
+    navigator.serviceWorker.register('sw.js').then((reg)=>{
+      reg.update();
+      reg.addEventListener('updatefound', ()=>{
+        const newWorker = reg.installing;
+        if(newWorker){
+          newWorker.addEventListener('statechange', ()=>{
+            if(newWorker.state === 'activated'){
+              window.location.reload();
+            }
+          });
+        }
+      });
+    }).catch(()=>{});
   });
 }
 </script>
