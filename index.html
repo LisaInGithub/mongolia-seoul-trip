@@ -752,7 +752,7 @@ flex-shrink:0;
 </main>
 
 <footer style="text-align:center;font-size:11px;color:var(--ink-soft);padding:8px 0 12px;">
-行程手冊 v1.3 ・ 更新於 2026-07-13 15:33（台北時間） ・ <a href="#" id="contactToggle" onclick="toggleContact(event)" style="color:var(--sky-deep);text-decoration:underline;cursor:pointer;">✉️ 與我聯繫</a>
+行程手冊 v1.5 ・ 更新於 2026-07-13 16:51（台北時間） ・ <a href="#" id="contactToggle" onclick="toggleContact(event)" style="color:var(--sky-deep);text-decoration:underline;cursor:pointer;">✉️ 與我聯繫</a>
 </footer>
 <div id="contactPanel" style="display:none;max-width:480px;margin:0 auto 30px;padding:0 16px;">
 <div class="info-card" style="padding:16px;">
@@ -1123,26 +1123,26 @@ if(tripMap) tripMap.invalidateSize();
 
 /* ---------------- MAP ---------------- */
 const mapPoints = [
-{name:"Chinggis Khaan 國際機場", day:"7/30", color:"#1D4258", lat:47.8494883, lng:106.767309, note:"抵達烏蘭巴托 16:45", region:"mongolia"},
-{name:"H9 Hotel Nine Ulaanbaatar", day:"7/30", color:"#1D4258", lat:47.9203819, lng:106.9218572, note:"住宿", region:"mongolia"},
-{name:"Gorkhi-Terelj 國家公園", day:"7/31", color:"#8C7A63", lat:48.1660429, lng:107.7359485, note:"含龜石 Turtle Rock", region:"mongolia"},
-{name:"Aryabal 冥想寺廟", day:"7/31", color:"#8C7A63", lat:47.9354816, lng:107.4274684, note:"108階步道，山頂視野極佳", region:"mongolia"},
-{name:"成吉思汗雕像博物館", day:"8/1", color:"#8C7A63", lat:47.8081558, lng:107.5298063, note:"騎鷹體驗、傳統服飾體驗", region:"mongolia"},
-{name:"Dalanzadgad 機場", day:"8/2 · 8/5", color:"#B5502D", lat:43.6063832, lng:104.3704384, note:"國內線機場", region:"mongolia"},
-{name:"Yolyn Am / Eagle Valley", day:"8/2", color:"#B5502D", lat:43.5428975, lng:104.0384641, note:"冰河峽谷健行", region:"mongolia"},
-{name:"Khongoryn Els 洪戈爾沙丘", day:"8/3", color:"#B5502D", lat:43.7413364, lng:102.3348999, note:"騎駱駝、攀登沙丘", region:"mongolia"},
-{name:"Bayanzag 烈焰懸崖", day:"8/4", color:"#B5502D", lat:44.1398307, lng:103.7158846, note:"尋找恐龍蛋、攝影", region:"mongolia"},
-{name:"戈壁自然歷史博物館", day:"8/5", color:"#B5502D", lat:43.5838637, lng:104.4266397, note:"含午餐", region:"mongolia"},
-{name:"State Department Store 國營百貨", day:"8/6", color:"#1D4258", lat:47.9168099, lng:106.9063627, note:"換匯、SIM卡、伴手禮", region:"mongolia"},
-{name:"甘丹寺", day:"8/6", color:"#1D4258", lat:47.9231136, lng:106.8949841, note:"", region:"mongolia"},
-{name:"成吉思汗國家博物館", day:"8/6", color:"#1D4258", lat:47.9226227, lng:106.9148724, note:"", region:"mongolia"},
-{name:"The Bull Hot Pot Restaurant", day:"美食", color:"#1D4258", lat:47.9136489, lng:106.8932524, note:"火鍋餐廳，4.4★", region:"mongolia"},
-{name:"Golden Gobi Chocolate", day:"美食", color:"#1D4258", lat:47.9167863, lng:106.9104126, note:"巧克力店，4.2★", region:"mongolia"},
-{name:"烏蘭巴托飯店 Ulaanbaatar Hotel", day:"8/5–8/7", color:"#1D4258", lat:47.9187798, lng:106.9227172, note:"住宿2晚", region:"mongolia"},
-{name:"Incheon 仁川國際機場", day:"8/7 · 8/9", color:"#23514E", lat:37.458666, lng:126.4419679, note:"進出首爾", region:"seoul"},
-{name:"Hotel Midcity Myeongdong", day:"8/7–8/9", color:"#23514E", lat:37.567663, lng:126.9811028, note:"住宿2晚", region:"seoul"},
-{name:"景福宮", day:"8/8", color:"#23514E", lat:37.579617, lng:126.977041, note:"建議上午前往", region:"seoul"},
-{name:"益善洞韓屋村", day:"8/8", color:"#23514E", lat:37.5737132, lng:126.9901271, note:"韓屋咖啡廳、鹽可頌", region:"seoul"},
+{name:"Chinggis Khaan 國際機場", day:"7/30", color:"#1D4258", lat:47.65139, lng:106.82139, note:"抵達烏蘭巴托 16:45（新機場，2021年啟用）", region:"mongolia", query:"New Ulaanbaatar International Airport"},
+{name:"H9 Hotel Nine Ulaanbaatar", day:"7/30", color:"#1D4258", lat:47.9203819, lng:106.9218572, note:"住宿", region:"mongolia", query:"H9 Hotel Nine Ulaanbaatar"},
+{name:"Gorkhi-Terelj 國家公園", day:"7/31", color:"#8C7A63", lat:47.9077, lng:107.4227, note:"含龜石 Turtle Rock", region:"mongolia", query:"Turtle Rock Terelj Mongolia"},
+{name:"Aryabal 冥想寺廟", day:"7/31", color:"#8C7A63", lat:47.9354816, lng:107.4274684, note:"108階步道，山頂視野極佳", region:"mongolia", query:"Aryabal Meditation Temple"},
+{name:"成吉思汗雕像博物館", day:"8/1", color:"#8C7A63", lat:47.8081558, lng:107.5298063, note:"騎鷹體驗、傳統服飾體驗", region:"mongolia", query:"Genghis Khan Equestrian Statue"},
+{name:"Dalanzadgad 機場", day:"8/2 · 8/5", color:"#B5502D", lat:43.6063832, lng:104.3704384, note:"國內線機場", region:"mongolia", query:"Dalanzadgad Airport"},
+{name:"Yolyn Am / Eagle Valley", day:"8/2", color:"#B5502D", lat:43.4959, lng:104.0825, note:"冰河峽谷健行", region:"mongolia", query:"Yolyn Am Eagle Valley Gobi Gurvansaikhan National Park"},
+{name:"Khongoryn Els 洪戈爾沙丘", day:"8/3", color:"#B5502D", lat:43.7413364, lng:102.3348999, note:"騎駱駝、攀登沙丘", region:"mongolia", query:"Khongoryn Els sand dunes"},
+{name:"Bayanzag 烈焰懸崖", day:"8/4", color:"#B5502D", lat:44.1398307, lng:103.7158846, note:"尋找恐龍蛋、攝影", region:"mongolia", query:"Bayanzag Flaming Cliffs Mongolia"},
+{name:"戈壁自然歷史博物館", day:"8/5", color:"#B5502D", lat:43.5838637, lng:104.4266397, note:"含午餐", region:"mongolia", query:"Natural History Museum Dalanzadgad Mongolia"},
+{name:"State Department Store 國營百貨", day:"8/6", color:"#1D4258", lat:47.9168099, lng:106.9063627, note:"換匯、SIM卡、伴手禮", region:"mongolia", query:"State Department Store Ulaanbaatar"},
+{name:"甘丹寺", day:"8/6", color:"#1D4258", lat:47.9231136, lng:106.8949841, note:"", region:"mongolia", query:"Gandantegchinlen Monastery Ulaanbaatar"},
+{name:"成吉思汗國家博物館", day:"8/6", color:"#1D4258", lat:47.9226227, lng:106.9148724, note:"", region:"mongolia", query:"Chinggis Khaan National Museum Ulaanbaatar"},
+{name:"The Bull Hot Pot Restaurant", day:"美食", color:"#1D4258", lat:47.9136489, lng:106.8932524, note:"火鍋餐廳，4.4★", region:"mongolia", query:"The Bull Hot Pot Restaurant, Beijing Street, Ulaanbaatar"},
+{name:"Golden Gobi Chocolate", day:"美食", color:"#1D4258", lat:47.9167863, lng:106.9104126, note:"巧克力店，4.2★", region:"mongolia", query:"Golden Gobi Chocolate, Ulaanbaatar"},
+{name:"烏蘭巴托飯店 Ulaanbaatar Hotel", day:"8/5–8/7", color:"#1D4258", lat:47.9187798, lng:106.9227172, note:"住宿2晚", region:"mongolia", query:"Ulaanbaatar Hotel, B.Altangerel street-7, Sukhbaatar district, Ulaanbaatar, Mongolia"},
+{name:"Incheon 仁川國際機場", day:"8/7 · 8/9", color:"#23514E", lat:37.458666, lng:126.4419679, note:"進出首爾", region:"seoul", query:"Incheon International Airport"},
+{name:"Hotel Midcity Myeongdong", day:"8/7–8/9", color:"#23514E", lat:37.567663, lng:126.9811028, note:"住宿2晚", region:"seoul", query:"Hotel Midcity Myeongdong Seoul"},
+{name:"景福宮", day:"8/8", color:"#23514E", lat:37.579617, lng:126.977041, note:"建議上午前往", region:"seoul", query:"Gyeongbokgung Palace"},
+{name:"益善洞韓屋村", day:"8/8", color:"#23514E", lat:37.5737132, lng:126.9901271, note:"韓屋咖啡廳、鹽可頌", region:"seoul", query:"Ikseon-dong Hanok Village Seoul"},
 ];
 
 let tripMap = null;
@@ -1162,8 +1162,9 @@ const dayGroups = [
 {date:"8/9", title:"首爾 → 回台", color:"#23514E", points:["Hotel Midcity Myeongdong","Incheon 仁川國際機場"]},
 ];
 
-function gmapUrl(lat, lng){
-return 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng;
+function gmapUrl(point){
+const q = (point && point.query) ? point.query : (point.lat + ',' + point.lng);
+return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
 }
 
 function findPoint(name){
@@ -1185,7 +1186,7 @@ el.innerHTML = `
 </div>
 <ul class="day-list-points">${g.points.map(name=>{
 const pt = findPoint(name);
-const link = pt ? `<a href="${gmapUrl(pt.lat, pt.lng)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 ${name}</a>` : name;
+const link = pt ? `<a href="${gmapUrl(pt)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 ${name}</a>` : name;
 return `<li>${link}</li>`;
 }).join('')}</ul>
 `;
@@ -1448,7 +1449,7 @@ fillColor:p.color,
 fillOpacity:1
 }).addTo(tripMap);
 marker.bindPopup(
-`<div class="popup-day">${p.day}</div><div class="popup-title">${p.name}</div>${p.note?`<div class="popup-note">${p.note}</div>`:''}<div class="popup-note" style="margin-top:6px;"><a href="${gmapUrl(p.lat,p.lng)}" target="_blank" rel="noopener" style="color:var(--sky-deep);">📍 在 Google Map 開啟</a></div>`
+`<div class="popup-day">${p.day}</div><div class="popup-title">${p.name}</div>${p.note?`<div class="popup-note">${p.note}</div>`:''}<div class="popup-note" style="margin-top:6px;"><a href="${gmapUrl(p)}" target="_blank" rel="noopener" style="color:var(--sky-deep);">📍 在 Google Map 開啟</a></div>`
 );
 marker.regionTag = p.region;
 marker.pointName = p.name;
