@@ -751,9 +751,16 @@ flex-shrink:0;
 
 </main>
 
-<footer style="text-align:center;font-size:11px;color:var(--ink-soft);padding:8px 0 30px;">
-行程手冊 v1.2 ・ 更新於 2026-07-13 12:10（台北時間）
+<footer style="text-align:center;font-size:11px;color:var(--ink-soft);padding:8px 0 12px;">
+行程手冊 v1.3 ・ 更新於 2026-07-13 15:33（台北時間） ・ <a href="#" id="contactToggle" onclick="toggleContact(event)" style="color:var(--sky-deep);text-decoration:underline;cursor:pointer;">✉️ 與我聯繫</a>
 </footer>
+<div id="contactPanel" style="display:none;max-width:480px;margin:0 auto 30px;padding:0 16px;">
+<div class="info-card" style="padding:16px;">
+<h3 style="text-align:center;">✉️ 與我聯繫</h3>
+<p style="text-align:center;margin-bottom:12px;">有想新增或刪減的地方嗎？留言給我，我會幫忙更新行程表 🙏</p>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_QHrczDUYGWE3vSD-0qixU34CHVZ4cHPyRVL_f3xO6r5vmA/viewform?embedded=true" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:10px;border:1px solid var(--line);background:#fff;display:block;">載入中…</iframe>
+</div>
+</div>
 
 <script>
 /* ---------------- DATA ---------------- */
@@ -1014,6 +1021,15 @@ const todayISO = new Date().toISOString().slice(0,10);
 
 function mapUrl(query){
 return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+}
+
+function toggleContact(e){
+if(e) e.preventDefault();
+const panel = document.getElementById('contactPanel');
+if(!panel) return;
+const show = panel.style.display === 'none' || !panel.style.display;
+panel.style.display = show ? 'block' : 'none';
+if(show){ panel.scrollIntoView({behavior:'smooth', block:'start'}); }
 }
 
 days.forEach((d,i)=>{
