@@ -12,1044 +12,1044 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
-  :root{
-    --sand: #EFE6D3;
-    --sand-deep: #E4D6B8;
-    --ink: #2B2622;
-    --ink-soft: #6B6154;
-    --rust: #B5502D;
-    --rust-deep: #8E3D22;
-    --sky: #2C5A78;
-    --sky-deep: #1D4258;
-    --felt: #8C7A63;
-    --seoul: #2F6F6B;
-    --seoul-deep: #23514E;
-    --card: #FBF7EE;
-    --line: rgba(43,38,34,0.12);
-    --ok: #4B7A4A;
-  }
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--sand);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Microsoft JhengHei",sans-serif;
-    line-height:1.5;
-    padding-bottom:60px;
-  }
-  .display{
-    font-family:Georgia,"Noto Serif TC",serif;
-    letter-spacing:0.01em;
-  }
-  .mono{
-    font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
-  }
+:root{
+--sand: #EFE6D3;
+--sand-deep: #E4D6B8;
+--ink: #2B2622;
+--ink-soft: #6B6154;
+--rust: #B5502D;
+--rust-deep: #8E3D22;
+--sky: #2C5A78;
+--sky-deep: #1D4258;
+--felt: #8C7A63;
+--seoul: #2F6F6B;
+--seoul-deep: #23514E;
+--card: #FBF7EE;
+--line: rgba(43,38,34,0.12);
+--ok: #4B7A4A;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+margin:0;
+background:var(--sand);
+color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Microsoft JhengHei",sans-serif;
+line-height:1.5;
+padding-bottom:60px;
+}
+.display{
+font-family:Georgia,"Noto Serif TC",serif;
+letter-spacing:0.01em;
+}
+.mono{
+font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
 
-  /* ---------- HERO ---------- */
-  header.hero{
-    position:relative;
-    padding:34px 20px 26px;
-    background:
-      radial-gradient(ellipse at 20% -10%, rgba(181,80,45,0.18), transparent 55%),
-      linear-gradient(180deg, var(--sand-deep) 0%, var(--sand) 100%);
-    border-bottom:1px solid var(--line);
-    overflow:hidden;
-  }
-  .hero-eyebrow{
-    font-size:12px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    margin-bottom:6px;
-  }
-  .hero-title{
-    font-size:28px;
-    font-weight:700;
-    margin:0 0 4px;
-    color:var(--ink);
-  }
-  .hero-sub{
-    font-size:14px;
-    color:var(--ink-soft);
-    margin-bottom:22px;
-  }
-  .countdown{
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    margin-bottom:18px;
-  }
-  .countdown .num{
-    font-size:52px;
-    font-weight:700;
-    line-height:1;
-    color:var(--rust);
-  }
-  .countdown .label{
-    font-size:13px;
-    color:var(--ink-soft);
-  }
-  /* horizon progress */
-  .horizon{
-    position:relative;
-    height:34px;
-    border-radius:17px;
-    background:var(--sand-deep);
-    border:1px solid var(--line);
-    overflow:hidden;
-  }
-  .horizon-fill{
-    position:absolute; left:0; top:0; bottom:0;
-    background:linear-gradient(90deg, var(--sky-deep), var(--sky) 55%, var(--rust) 100%);
-    border-radius:17px 0 0 17px;
-  }
-  .horizon-marker{
-    position:absolute;
-    top:50%; transform:translate(-50%,-50%);
-    width:12px;height:12px;border-radius:50%;
-    background:var(--card);
-    border:2px solid var(--ink);
-  }
-  .horizon-dates{
-    display:flex;justify-content:space-between;
-    font-size:11px;color:var(--ink-soft);
-    margin-top:6px;
-  }
-  .members-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-bottom:20px;
-  }
-  .member-chip{
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    font-size:12.5px;
-    font-weight:600;
-    color:var(--ink);
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:5px 12px;
-    border-radius:20px;
-    box-shadow:0 1px 2px rgba(43,38,34,0.05);
-  }
+/* ---------- HERO ---------- */
+header.hero{
+position:relative;
+padding:34px 20px 26px;
+background:
+radial-gradient(ellipse at 20% -10%, rgba(181,80,45,0.18), transparent 55%),
+linear-gradient(180deg, var(--sand-deep) 0%, var(--sand) 100%);
+border-bottom:1px solid var(--line);
+overflow:hidden;
+}
+.hero-eyebrow{
+font-size:12px;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:var(--ink-soft);
+margin-bottom:6px;
+}
+.hero-title{
+font-size:28px;
+font-weight:700;
+margin:0 0 4px;
+color:var(--ink);
+}
+.hero-sub{
+font-size:14px;
+color:var(--ink-soft);
+margin-bottom:22px;
+}
+.countdown{
+display:flex;
+align-items:baseline;
+gap:10px;
+margin-bottom:18px;
+}
+.countdown .num{
+font-size:52px;
+font-weight:700;
+line-height:1;
+color:var(--rust);
+}
+.countdown .label{
+font-size:13px;
+color:var(--ink-soft);
+}
+/* horizon progress */
+.horizon{
+position:relative;
+height:34px;
+border-radius:17px;
+background:var(--sand-deep);
+border:1px solid var(--line);
+overflow:hidden;
+}
+.horizon-fill{
+position:absolute; left:0; top:0; bottom:0;
+background:linear-gradient(90deg, var(--sky-deep), var(--sky) 55%, var(--rust) 100%);
+border-radius:17px 0 0 17px;
+}
+.horizon-marker{
+position:absolute;
+top:50%; transform:translate(-50%,-50%);
+width:12px;height:12px;border-radius:50%;
+background:var(--card);
+border:2px solid var(--ink);
+}
+.horizon-dates{
+display:flex;justify-content:space-between;
+font-size:11px;color:var(--ink-soft);
+margin-top:6px;
+}
+.members-row{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:20px;
+}
+.member-chip{
+display:inline-flex;
+align-items:center;
+gap:5px;
+font-size:12.5px;
+font-weight:600;
+color:var(--ink);
+background:var(--card);
+border:1px solid var(--line);
+padding:5px 12px;
+border-radius:20px;
+box-shadow:0 1px 2px rgba(43,38,34,0.05);
+}
 
-  /* ---------- TABS ---------- */
-  nav.tabs{
-    position:sticky; top:0; z-index:20;
-    display:flex;
-    background:var(--sand);
-    border-bottom:1px solid var(--line);
-    padding:0 12px;
-  }
-  nav.tabs button{
-    flex:1;
-    border:none;background:none;
-    font-size:14px;font-weight:600;
-    color:var(--ink-soft);
-    padding:14px 6px 12px;
-    cursor:pointer;
-    border-bottom:3px solid transparent;
-    font-family:inherit;
-    transition:color .15s;
-  }
-  nav.tabs button.active{
-    color:var(--ink);
-    border-bottom-color:var(--rust);
-  }
-  nav.tabs .badge{
-    display:inline-block;
-    min-width:16px;height:16px;padding:0 4px;
-    border-radius:8px;
-    background:var(--rust);
-    color:#fff;
-    font-size:10px;font-weight:700;
-    line-height:16px;text-align:center;
-    margin-left:5px;
-    vertical-align:2px;
-  }
+/* ---------- TABS ---------- */
+nav.tabs{
+position:sticky; top:0; z-index:20;
+display:flex;
+background:var(--sand);
+border-bottom:1px solid var(--line);
+padding:0 12px;
+}
+nav.tabs button{
+flex:1;
+border:none;background:none;
+font-size:14px;font-weight:600;
+color:var(--ink-soft);
+padding:14px 6px 12px;
+cursor:pointer;
+border-bottom:3px solid transparent;
+font-family:inherit;
+transition:color .15s;
+}
+nav.tabs button.active{
+color:var(--ink);
+border-bottom-color:var(--rust);
+}
+nav.tabs .badge{
+display:inline-block;
+min-width:16px;height:16px;padding:0 4px;
+border-radius:8px;
+background:var(--rust);
+color:#fff;
+font-size:10px;font-weight:700;
+line-height:16px;text-align:center;
+margin-left:5px;
+vertical-align:2px;
+}
 
-  main{padding:18px 16px 10px; max-width:640px; margin:0 auto;}
-  .panel{display:none;}
-  .panel.active{display:block;}
+main{padding:18px 16px 10px; max-width:640px; margin:0 auto;}
+.panel{display:none;}
+.panel.active{display:block;}
 
-  /* ---------- ticket-stub day card ---------- */
-  .day{
-    position:relative;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    margin-bottom:14px;
-    box-shadow:0 1px 2px rgba(43,38,34,0.05);
-    overflow:hidden;
-  }
-  .day.today{
-    box-shadow:0 0 0 2px var(--rust);
-  }
-  .day-head{
-    display:flex; align-items:center; gap:12px;
-    padding:14px 16px;
-    cursor:pointer;
-    -webkit-tap-highlight-color:transparent;
-  }
-  .day-date{
-    font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:20px;font-weight:700;
-    color:var(--ink);
-    min-width:52px;
-  }
-  .day-meta{flex:1;min-width:0;}
-  .day-title{font-size:15px;font-weight:700;color:var(--ink);}
-  .day-loc{font-size:12px;color:var(--ink-soft); margin-top:2px;}
-  .day-loc a.map-pin{
-    color:var(--sky-deep);
-    text-decoration:none;
-    margin-left:4px;
-  }
-  .day-tag{
-    font-size:10px;font-weight:700;letter-spacing:.04em;
-    padding:3px 8px;border-radius:20px;color:#fff;
-    white-space:nowrap;
-    text-transform:uppercase;
-  }
-  .chev{
-    font-size:12px;color:var(--ink-soft);
-    transition:transform .2s;
-  }
-  .day.open .chev{transform:rotate(180deg);}
-  .day-body{
-    display:none;
-    padding:0 16px 16px 16px;
-    border-top:1px dashed var(--line);
-  }
-  .day.open .day-body{display:block;padding-top:14px;}
-  .day-body h4{
-    font-size:11px;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--ink-soft); margin:14px 0 6px;
-  }
-  .day-body h4:first-child{margin-top:0;}
-  .day-body ul{margin:0;padding-left:18px;font-size:13.5px;}
-  .day-body li{margin-bottom:4px;}
-  .map-links{margin:0;padding-left:0;list-style:none;}
-  .map-links li{margin-bottom:5px;}
-  .map-links a{
-    display:inline-flex;align-items:center;gap:5px;
-    font-size:13px;color:var(--sky-deep);
-    text-decoration:none;
-    background:var(--sand);
-    padding:5px 10px;border-radius:8px;
-    border:1px solid var(--line);
-  }
-  .map-links a:hover{background:var(--sand-deep);}
-  .hotel-line{
-    display:flex;align-items:center;gap:6px;
-    font-size:13px; color:var(--ink);
-    background:var(--sand);
-    padding:8px 10px;border-radius:8px;
-    margin-top:2px;
-  }
-  .note{
-    font-size:12.5px;color:var(--rust-deep);
-    background:rgba(181,80,45,0.08);
-    border-left:3px solid var(--rust);
-    padding:8px 10px;border-radius:0 8px 8px 0;
-    margin-top:10px;
-  }
+/* ---------- ticket-stub day card ---------- */
+.day{
+position:relative;
+background:var(--card);
+border:1px solid var(--line);
+border-radius:14px;
+margin-bottom:14px;
+box-shadow:0 1px 2px rgba(43,38,34,0.05);
+overflow:hidden;
+}
+.day.today{
+box-shadow:0 0 0 2px var(--rust);
+}
+.day-head{
+display:flex; align-items:center; gap:12px;
+padding:14px 16px;
+cursor:pointer;
+-webkit-tap-highlight-color:transparent;
+}
+.day-date{
+font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+font-size:20px;font-weight:700;
+color:var(--ink);
+min-width:52px;
+}
+.day-meta{flex:1;min-width:0;}
+.day-title{font-size:15px;font-weight:700;color:var(--ink);}
+.day-loc{font-size:12px;color:var(--ink-soft); margin-top:2px;}
+.day-loc a.map-pin{
+color:var(--sky-deep);
+text-decoration:none;
+margin-left:4px;
+}
+.day-tag{
+font-size:10px;font-weight:700;letter-spacing:.04em;
+padding:3px 8px;border-radius:20px;color:#fff;
+white-space:nowrap;
+text-transform:uppercase;
+}
+.chev{
+font-size:12px;color:var(--ink-soft);
+transition:transform .2s;
+}
+.day.open .chev{transform:rotate(180deg);}
+.day-body{
+display:none;
+padding:0 16px 16px 16px;
+border-top:1px dashed var(--line);
+}
+.day.open .day-body{display:block;padding-top:14px;}
+.day-body h4{
+font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+color:var(--ink-soft); margin:14px 0 6px;
+}
+.day-body h4:first-child{margin-top:0;}
+.day-body ul{margin:0;padding-left:18px;font-size:13.5px;}
+.day-body li{margin-bottom:4px;}
+.map-links{margin:0;padding-left:0;list-style:none;}
+.map-links li{margin-bottom:5px;}
+.map-links a{
+display:inline-flex;align-items:center;gap:5px;
+font-size:13px;color:var(--sky-deep);
+text-decoration:none;
+background:var(--sand);
+padding:5px 10px;border-radius:8px;
+border:1px solid var(--line);
+}
+.map-links a:hover{background:var(--sand-deep);}
+.hotel-line{
+display:flex;align-items:center;gap:6px;
+font-size:13px; color:var(--ink);
+background:var(--sand);
+padding:8px 10px;border-radius:8px;
+margin-top:2px;
+}
+.note{
+font-size:12.5px;color:var(--rust-deep);
+background:rgba(181,80,45,0.08);
+border-left:3px solid var(--rust);
+padding:8px 10px;border-radius:0 8px 8px 0;
+margin-top:10px;
+}
 
-  /* segment perforation divider */
-  .segment-label{
-    display:flex;align-items:center;gap:10px;
-    margin:22px 0 10px;
-    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-  .segment-label::before, .segment-label::after{
-    content:"";flex:1;height:1px;background:var(--line);
-  }
+/* segment perforation divider */
+.segment-label{
+display:flex;align-items:center;gap:10px;
+margin:22px 0 10px;
+font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+color:var(--ink-soft);
+}
+.segment-label::before, .segment-label::after{
+content:"";flex:1;height:1px;background:var(--line);
+}
 
-  /* ---------- todo tab ---------- */
-  .todo-group{margin-bottom:22px;}
-  .todo-group h3{
-    font-size:13px;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--ink-soft);
-    display:flex;align-items:center;gap:8px;
-    margin-bottom:8px;
-  }
-  .todo-group h3 .count{
-    font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:11px; color:var(--ink);
-    background:var(--sand-deep);
-    padding:1px 7px;border-radius:10px;
-  }
-  .todo-item{
-    display:flex; align-items:flex-start; gap:10px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:11px 12px;
-    margin-bottom:7px;
-  }
-  .todo-item input[type=checkbox]{
-    margin-top:2px;
-    width:18px;height:18px;flex-shrink:0;
-    accent-color: var(--ok);
-  }
-  .todo-text{font-size:13.5px;flex:1;}
-  .todo-item.checked .todo-text{
-    color:var(--ink-soft);
-    text-decoration:line-through;
-  }
-  .todo-sub{display:block;font-size:11.5px;color:var(--ink-soft);margin-top:2px;font-weight:400;text-decoration:none;}
+/* ---------- todo tab ---------- */
+.todo-group{margin-bottom:22px;}
+.todo-group h3{
+font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+color:var(--ink-soft);
+display:flex;align-items:center;gap:8px;
+margin-bottom:8px;
+}
+.todo-group h3 .count{
+font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+font-size:11px; color:var(--ink);
+background:var(--sand-deep);
+padding:1px 7px;border-radius:10px;
+}
+.todo-item{
+display:flex; align-items:flex-start; gap:10px;
+background:var(--card);
+border:1px solid var(--line);
+border-radius:10px;
+padding:11px 12px;
+margin-bottom:7px;
+}
+.todo-item input[type=checkbox]{
+margin-top:2px;
+width:18px;height:18px;flex-shrink:0;
+accent-color: var(--ok);
+}
+.todo-text{font-size:13.5px;flex:1;}
+.todo-item.checked .todo-text{
+color:var(--ink-soft);
+text-decoration:line-through;
+}
+.todo-sub{display:block;font-size:11.5px;color:var(--ink-soft);margin-top:2px;font-weight:400;text-decoration:none;}
 
-  /* ---------- info tab ---------- */
-  .info-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:14px 16px;
-    margin-bottom:12px;
-  }
-  .info-card h3{margin:0 0 8px;font-size:14px;}
-  .info-card p, .info-card ul{font-size:13.5px;margin:4px 0;}
-  .info-card ul{padding-left:18px;}
-  .info-card a{color:var(--sky-deep);}
+/* ---------- info tab ---------- */
+.info-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:12px;
+padding:14px 16px;
+margin-bottom:12px;
+}
+.info-card h3{margin:0 0 8px;font-size:14px;}
+.info-card p, .info-card ul{font-size:13.5px;margin:4px 0;}
+.info-card ul{padding-left:18px;}
+.info-card a{color:var(--sky-deep);}
 
-  .reset-row{
-    text-align:center;padding:18px 0 4px;
-  }
-  .reset-row button{
-    font-family:inherit;
-    background:none;border:1px solid var(--line);
-    color:var(--ink-soft);font-size:12px;
-    padding:8px 14px;border-radius:20px;cursor:pointer;
-  }
+.reset-row{
+text-align:center;padding:18px 0 4px;
+}
+.reset-row button{
+font-family:inherit;
+background:none;border:1px solid var(--line);
+color:var(--ink-soft);font-size:12px;
+padding:8px 14px;border-radius:20px;cursor:pointer;
+}
 
-  /* ---------- MAP TAB ---------- */
-  .map-toolbar{
-    display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;
-  }
-  .map-toolbar button{
-    font-family:inherit;
-    font-size:12.5px; font-weight:600;
-    color:var(--ink);
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:7px 14px;
-    border-radius:20px;
-    cursor:pointer;
-  }
-  .map-toolbar button.active{
-    background:var(--ink);
-    color:#fff;
-    border-color:var(--ink);
-  }
-  #tripMap{
-    width:100%;
-    height:min(62vh, 480px);
-    border-radius:14px;
-    border:1px solid var(--line);
-    background:var(--sand-deep);
-  }
-  .map-legend{
-    display:flex; flex-wrap:wrap; gap:10px 14px;
-    margin-top:10px;
-    font-size:12px; color:var(--ink-soft);
-  }
-  .map-legend span{display:inline-flex; align-items:center; gap:5px;}
-  .map-legend i{
-    width:10px;height:10px;border-radius:50%;display:inline-block;
-  }
-  .leaflet-popup-content-wrapper{
-    border-radius:10px;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Microsoft JhengHei",sans-serif;
-  }
-  .popup-day{font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
-  .popup-title{font-size:14px;font-weight:700;color:var(--ink);margin:2px 0 4px;}
-  .popup-note{font-size:12px;color:var(--ink-soft);}
-  .day-list-group{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:12px 14px;
-    margin-bottom:10px;
-    cursor:pointer;
-  }
-  .day-list-group:active{background:var(--sand-deep);}
-  .day-list-head{
-    display:flex; align-items:center; gap:10px;
-  }
-  .day-list-date{
-    font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
-    font-size:14px; font-weight:700; color:var(--ink);
-    min-width:44px;
-  }
-  .day-list-title{font-size:13.5px; font-weight:700; color:var(--ink); flex:1;}
-  .day-list-tag{
-    width:9px;height:9px;border-radius:50%;flex-shrink:0;
-  }
-  .day-list-points{
-    margin:8px 0 0; padding-left:0;
-    font-size:12.5px; color:var(--ink-soft);
-    list-style:none;
-  }
-  .day-list-points li{margin-bottom:4px;}
-  .day-list-points a{
-    color:var(--sky-deep);
-    text-decoration:none;
-  }
-  .day-list-points a:hover{text-decoration:underline;}
+/* ---------- MAP TAB ---------- */
+.map-toolbar{
+display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;
+}
+.map-toolbar button{
+font-family:inherit;
+font-size:12.5px; font-weight:600;
+color:var(--ink);
+background:var(--card);
+border:1px solid var(--line);
+padding:7px 14px;
+border-radius:20px;
+cursor:pointer;
+}
+.map-toolbar button.active{
+background:var(--ink);
+color:#fff;
+border-color:var(--ink);
+}
+#tripMap{
+width:100%;
+height:min(62vh, 480px);
+border-radius:14px;
+border:1px solid var(--line);
+background:var(--sand-deep);
+}
+.map-legend{
+display:flex; flex-wrap:wrap; gap:10px 14px;
+margin-top:10px;
+font-size:12px; color:var(--ink-soft);
+}
+.map-legend span{display:inline-flex; align-items:center; gap:5px;}
+.map-legend i{
+width:10px;height:10px;border-radius:50%;display:inline-block;
+}
+.leaflet-popup-content-wrapper{
+border-radius:10px;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang TC","Microsoft JhengHei",sans-serif;
+}
+.popup-day{font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+.popup-title{font-size:14px;font-weight:700;color:var(--ink);margin:2px 0 4px;}
+.popup-note{font-size:12px;color:var(--ink-soft);}
+.day-list-group{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:12px;
+padding:12px 14px;
+margin-bottom:10px;
+cursor:pointer;
+}
+.day-list-group:active{background:var(--sand-deep);}
+.day-list-head{
+display:flex; align-items:center; gap:10px;
+}
+.day-list-date{
+font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+font-size:14px; font-weight:700; color:var(--ink);
+min-width:44px;
+}
+.day-list-title{font-size:13.5px; font-weight:700; color:var(--ink); flex:1;}
+.day-list-tag{
+width:9px;height:9px;border-radius:50%;flex-shrink:0;
+}
+.day-list-points{
+margin:8px 0 0; padding-left:0;
+font-size:12.5px; color:var(--ink-soft);
+list-style:none;
+}
+.day-list-points li{margin-bottom:4px;}
+.day-list-points a{
+color:var(--sky-deep);
+text-decoration:none;
+}
+.day-list-points a:hover{text-decoration:underline;}
 
-  /* ---------- TRANSLATE TAB ---------- */
-  .translate-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:16px;
-  }
-  .lang-row{
-    display:flex; align-items:center; gap:10px;
-    margin-bottom:12px;
-  }
-  .lang-row select{
-    flex:1;
-    font-family:inherit;
-    font-size:13.5px; font-weight:600;
-    color:var(--ink);
-    background:var(--sand);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:9px 10px;
-    appearance:none;
-  }
-  .swap-btn{
-    width:34px;height:34px;flex-shrink:0;
-    border-radius:50%;
-    border:1px solid var(--line);
-    background:var(--sand);
-    color:var(--ink);
-    font-size:15px;
-    cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .swap-btn:active{background:var(--sand-deep);}
-  #translateInput{
-    width:100%;
-    min-height:90px;
-    font-family:inherit;
-    font-size:14.5px;
-    color:var(--ink);
-    background:var(--sand);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:12px;
-    resize:vertical;
-    box-sizing:border-box;
-  }
-  .translate-btn{
-    width:100%;
-    margin-top:10px;
-    font-family:inherit;
-    font-size:14px; font-weight:700;
-    color:#fff;
-    background:var(--rust);
-    border:none;
-    border-radius:10px;
-    padding:12px;
-    cursor:pointer;
-  }
-  .translate-btn:active{opacity:.85;}
-  .translate-result{
-    margin-top:14px;
-    background:var(--sand);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:14px;
-    font-size:15px;
-    color:var(--ink);
-    min-height:28px;
-    white-space:pre-wrap;
-    position:relative;
-  }
-  .translate-result.placeholder{color:var(--ink-soft); font-size:13px;}
-  .copy-btn{
-    position:absolute; top:8px; right:8px;
-    font-size:11px; font-weight:700;
-    color:var(--ink-soft);
-    background:transparent;
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:4px 8px;
-    cursor:pointer;
-  }
-  .translate-note{
-    margin-top:10px;
-    font-size:11.5px;
-    color:var(--ink-soft);
-  }
-  .phrasebook-cat{
-    font-size:13px; font-weight:700; color:var(--ink);
-    margin:22px 0 10px;
-  }
-  .phrase-item{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:10px 12px;
-    margin-bottom:8px;
-  }
-  .phrase-zh{font-size:13.5px; font-weight:700; color:var(--ink);}
-  .phrase-local{font-size:14px; color:var(--rust); margin-top:3px; font-weight:600;}
-  .phrase-pron{font-size:11.5px; color:var(--ink-soft); margin-top:2px;}
+/* ---------- TRANSLATE TAB ---------- */
+.translate-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:14px;
+padding:16px;
+}
+.lang-row{
+display:flex; align-items:center; gap:10px;
+margin-bottom:12px;
+}
+.lang-row select{
+flex:1;
+font-family:inherit;
+font-size:13.5px; font-weight:600;
+color:var(--ink);
+background:var(--sand);
+border:1px solid var(--line);
+border-radius:10px;
+padding:9px 10px;
+appearance:none;
+}
+.swap-btn{
+width:34px;height:34px;flex-shrink:0;
+border-radius:50%;
+border:1px solid var(--line);
+background:var(--sand);
+color:var(--ink);
+font-size:15px;
+cursor:pointer;
+display:flex;align-items:center;justify-content:center;
+}
+.swap-btn:active{background:var(--sand-deep);}
+#translateInput{
+width:100%;
+min-height:90px;
+font-family:inherit;
+font-size:14.5px;
+color:var(--ink);
+background:var(--sand);
+border:1px solid var(--line);
+border-radius:10px;
+padding:12px;
+resize:vertical;
+box-sizing:border-box;
+}
+.translate-btn{
+width:100%;
+margin-top:10px;
+font-family:inherit;
+font-size:14px; font-weight:700;
+color:#fff;
+background:var(--rust);
+border:none;
+border-radius:10px;
+padding:12px;
+cursor:pointer;
+}
+.translate-btn:active{opacity:.85;}
+.translate-result{
+margin-top:14px;
+background:var(--sand);
+border:1px solid var(--line);
+border-radius:10px;
+padding:14px;
+font-size:15px;
+color:var(--ink);
+min-height:28px;
+white-space:pre-wrap;
+position:relative;
+}
+.translate-result.placeholder{color:var(--ink-soft); font-size:13px;}
+.copy-btn{
+position:absolute; top:8px; right:8px;
+font-size:11px; font-weight:700;
+color:var(--ink-soft);
+background:transparent;
+border:1px solid var(--line);
+border-radius:8px;
+padding:4px 8px;
+cursor:pointer;
+}
+.translate-note{
+margin-top:10px;
+font-size:11.5px;
+color:var(--ink-soft);
+}
+.phrasebook-cat{
+font-size:13px; font-weight:700; color:var(--ink);
+margin:22px 0 10px;
+}
+.phrase-item{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:10px;
+padding:10px 12px;
+margin-bottom:8px;
+}
+.phrase-zh{font-size:13.5px; font-weight:700; color:var(--ink);}
+.phrase-local{font-size:14px; color:var(--rust); margin-top:3px; font-weight:600;}
+.phrase-pron{font-size:11.5px; color:var(--ink-soft); margin-top:2px;}
 
-  .input-row{
-    display:flex; gap:8px; align-items:flex-end;
-  }
-  .input-row textarea{flex:1;}
-  .mic-btn{
-    width:44px;height:44px;flex-shrink:0;
-    border-radius:50%;
-    border:1px solid var(--line);
-    background:var(--sand);
-    color:var(--ink);
-    font-size:18px;
-    cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .mic-btn.recording{
-    background:var(--rust);
-    color:#fff;
-    animation:pulse 1.2s infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(181,80,45,.5);}
-    70%{box-shadow:0 0 0 10px rgba(181,80,45,0);}
-    100%{box-shadow:0 0 0 0 rgba(181,80,45,0);}
-  }
-  .speak-btn{
-    font-size:13px;
-    color:var(--ink-soft);
-    background:transparent;
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:4px 8px;
-    cursor:pointer;
-    flex-shrink:0;
-  }
-  .speak-btn:active{background:var(--sand-deep);}
-  .phrase-item{display:flex; align-items:center; justify-content:space-between; gap:10px;}
-  .phrase-text{flex:1; min-width:0;}
+.input-row{
+display:flex; gap:8px; align-items:flex-end;
+}
+.input-row textarea{flex:1;}
+.mic-btn{
+width:44px;height:44px;flex-shrink:0;
+border-radius:50%;
+border:1px solid var(--line);
+background:var(--sand);
+color:var(--ink);
+font-size:18px;
+cursor:pointer;
+display:flex;align-items:center;justify-content:center;
+}
+.mic-btn.recording{
+background:var(--rust);
+color:#fff;
+animation:pulse 1.2s infinite;
+}
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(181,80,45,.5);}
+70%{box-shadow:0 0 0 10px rgba(181,80,45,0);}
+100%{box-shadow:0 0 0 0 rgba(181,80,45,0);}
+}
+.speak-btn{
+font-size:13px;
+color:var(--ink-soft);
+background:transparent;
+border:1px solid var(--line);
+border-radius:8px;
+padding:4px 8px;
+cursor:pointer;
+flex-shrink:0;
+}
+.speak-btn:active{background:var(--sand-deep);}
+.phrase-item{display:flex; align-items:center; justify-content:space-between; gap:10px;}
+.phrase-text{flex:1; min-width:0;}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 </head>
 <body>
 
 <header class="hero">
-  <div class="hero-eyebrow">MONGOLIA · GOBI · SEOUL</div>
-  <h1 class="hero-title display">蒙古貴婦探險團</h1>
-  <div class="hero-sub">2026/7/30 – 8/9　烏蘭巴托・特勒吉・戈壁・首爾</div>
+<div class="hero-eyebrow">MONGOLIA · GOBI · SEOUL</div>
+<h1 class="hero-title display">蒙古貴婦探險團</h1>
+<div class="hero-sub">2026/7/30 – 8/9 烏蘭巴托・特勒吉・戈壁・首爾</div>
 
-  <div class="members-row">
-    <span class="member-chip">🐎 Tina</span>
-    <span class="member-chip">🦅 Emery</span>
-    <span class="member-chip">🐫 Lisa</span>
-    <span class="member-chip">⛺ 晏誌（Yen Chih）</span>
-  </div>
+<div class="members-row">
+<span class="member-chip">🐎 Tina</span>
+<span class="member-chip">🦅 Emery</span>
+<span class="member-chip">🐫 Lisa</span>
+<span class="member-chip">⛺ 晏誌（Yen Chih）</span>
+</div>
 
-  <div class="countdown">
-    <div class="num mono" id="countdownNum">--</div>
-    <div class="label" id="countdownLabel">計算中…</div>
-  </div>
+<div class="countdown">
+<div class="num mono" id="countdownNum">--</div>
+<div class="label" id="countdownLabel">計算中…</div>
+</div>
 
-  <div class="horizon">
-    <div class="horizon-fill" id="horizonFill"></div>
-    <div class="horizon-marker" id="horizonMarker"></div>
-  </div>
-  <div class="horizon-dates">
-    <span>7/30 出發</span>
-    <span>8/9 首爾回台</span>
-  </div>
+<div class="horizon">
+<div class="horizon-fill" id="horizonFill"></div>
+<div class="horizon-marker" id="horizonMarker"></div>
+</div>
+<div class="horizon-dates">
+<span>7/30 出發</span>
+<span>8/9 首爾回台</span>
+</div>
 </header>
 
 <nav class="tabs">
-  <button class="tab-btn active" data-tab="itinerary">行程</button>
-  <button class="tab-btn" data-tab="todo">待辦事項<span class="badge" id="todoBadge">0</span></button>
-  <button class="tab-btn" data-tab="packing">行李清單<span class="badge" id="packingBadge">0</span></button>
-  <button class="tab-btn" data-tab="map">地圖</button>
-  <button class="tab-btn" data-tab="translate">翻譯</button>
-  <button class="tab-btn" data-tab="info">實用資訊</button>
+<button class="tab-btn active" data-tab="itinerary">行程</button>
+<button class="tab-btn" data-tab="todo">待辦事項<span class="badge" id="todoBadge">0</span></button>
+<button class="tab-btn" data-tab="packing">行李清單<span class="badge" id="packingBadge">0</span></button>
+<button class="tab-btn" data-tab="map">地圖</button>
+<button class="tab-btn" data-tab="translate">翻譯</button>
+<button class="tab-btn" data-tab="info">實用資訊</button>
 </nav>
 
 <main>
 
-  <!-- ================= ITINERARY ================= -->
-  <section class="panel active" id="panel-itinerary"></section>
+<!-- ================= ITINERARY ================= -->
+<section class="panel active" id="panel-itinerary"></section>
 
-  <!-- ================= TODO ================= -->
-  <section class="panel" id="panel-todo">
-    <div class="reset-row" style="text-align:left;padding-top:0;margin-bottom:10px;">
-      <span style="font-size:12.5px;color:var(--ink-soft);">勾選的項目會自動儲存在這台裝置上</span>
-    </div>
-    <div id="todoContainer"></div>
-    <div class="reset-row"><button id="resetTodos">清除所有勾選紀錄</button></div>
-  </section>
+<!-- ================= TODO ================= -->
+<section class="panel" id="panel-todo">
+<div class="reset-row" style="text-align:left;padding-top:0;margin-bottom:10px;">
+<span style="font-size:12.5px;color:var(--ink-soft);">勾選的項目會自動儲存在這台裝置上</span>
+</div>
+<div id="todoContainer"></div>
+<div class="reset-row"><button id="resetTodos">清除所有勾選紀錄</button></div>
+</section>
 
-  <!-- ================= PACKING ================= -->
-  <section class="panel" id="panel-packing">
-    <div class="reset-row" style="text-align:left;padding-top:0;margin-bottom:10px;">
-      <span style="font-size:12.5px;color:var(--ink-soft);">勾選的項目會自動儲存在這台裝置上</span>
-    </div>
-    <div id="packingContainer"></div>
-    <div class="reset-row"><button id="resetPacking">清除所有勾選紀錄</button></div>
-  </section>
+<!-- ================= PACKING ================= -->
+<section class="panel" id="panel-packing">
+<div class="reset-row" style="text-align:left;padding-top:0;margin-bottom:10px;">
+<span style="font-size:12.5px;color:var(--ink-soft);">勾選的項目會自動儲存在這台裝置上</span>
+</div>
+<div id="packingContainer"></div>
+<div class="reset-row"><button id="resetPacking">清除所有勾選紀錄</button></div>
+</section>
 
-  <!-- ================= MAP ================= -->
-  <section class="panel" id="panel-map">
-    <div class="map-toolbar">
-      <button data-view="all" class="active">全部</button>
-      <button data-view="mongolia">蒙古</button>
-      <button data-view="seoul">首爾</button>
-    </div>
-    <div id="tripMap"></div>
-    <div class="map-legend">
-      <span><i style="background:#1D4258"></i>抵達／烏蘭巴托</span>
-      <span><i style="background:#8C7A63"></i>特勒吉</span>
-      <span><i style="background:#B5502D"></i>戈壁</span>
-      <span><i style="background:#23514E"></i>首爾</span>
-    </div>
-    <div id="dayList" style="margin-top:18px;"></div>
-  </section>
+<!-- ================= MAP ================= -->
+<section class="panel" id="panel-map">
+<div class="map-toolbar">
+<button data-view="all" class="active">全部</button>
+<button data-view="mongolia">蒙古</button>
+<button data-view="seoul">首爾</button>
+</div>
+<div id="tripMap"></div>
+<div class="map-legend">
+<span><i style="background:#1D4258"></i>抵達／烏蘭巴托</span>
+<span><i style="background:#8C7A63"></i>特勒吉</span>
+<span><i style="background:#B5502D"></i>戈壁</span>
+<span><i style="background:#23514E"></i>首爾</span>
+</div>
+<div id="dayList" style="margin-top:18px;"></div>
+</section>
 
-  <!-- ================= TRANSLATE ================= -->
-  <section class="panel" id="panel-translate">
-    <div class="translate-card">
-      <div class="lang-row">
-        <select id="langFrom">
-          <option value="zh-TW">中文</option>
-          <option value="mn">蒙古文</option>
-          <option value="en">英文</option>
-          <option value="ko">韓文</option>
-        </select>
-        <button class="swap-btn" id="swapLangBtn" title="交換語言">⇄</button>
-        <select id="langTo">
-          <option value="mn">蒙古文</option>
-          <option value="zh-TW">中文</option>
-          <option value="en">英文</option>
-          <option value="ko">韓文</option>
-        </select>
-      </div>
-      <div class="input-row">
-        <textarea id="translateInput" placeholder="輸入想翻譯的文字，或按🎤錄音…"></textarea>
-        <button class="mic-btn" id="micBtn" title="語音輸入">🎤</button>
-      </div>
-      <button class="translate-btn" id="translateBtn">翻譯</button>
-      <div class="translate-result placeholder" id="translateResult">翻譯結果會顯示在這裡</div>
-      <div class="translate-note">使用免費翻譯服務(MyMemory)，需要網路連線；蒙古文為小眾語言，翻譯品質僅供參考，重要溝通建議搭配下方常用短句或請當地人協助。語音輸入／播放需使用 Chrome 瀏覽器並允許麥克風權限；多數裝置不支援蒙古語錄音或發音，此時可改用文字輸入、給對方看畫面。</div>
-    </div>
+<!-- ================= TRANSLATE ================= -->
+<section class="panel" id="panel-translate">
+<div class="translate-card">
+<div class="lang-row">
+<select id="langFrom">
+<option value="zh-TW">中文</option>
+<option value="mn">蒙古文</option>
+<option value="en">英文</option>
+<option value="ko">韓文</option>
+</select>
+<button class="swap-btn" id="swapLangBtn" title="交換語言">⇄</button>
+<select id="langTo">
+<option value="mn">蒙古文</option>
+<option value="zh-TW">中文</option>
+<option value="en">英文</option>
+<option value="ko">韓文</option>
+</select>
+</div>
+<div class="input-row">
+<textarea id="translateInput" placeholder="輸入想翻譯的文字，或按🎤錄音…"></textarea>
+<button class="mic-btn" id="micBtn" title="語音輸入">🎤</button>
+</div>
+<button class="translate-btn" id="translateBtn">翻譯</button>
+<div class="translate-result placeholder" id="translateResult">翻譯結果會顯示在這裡</div>
+<div class="translate-note">使用免費翻譯服務(MyMemory)，需要網路連線；蒙古文為小眾語言，翻譯品質僅供參考，重要溝通建議搭配下方常用短句或請當地人協助。語音輸入／播放需使用 Chrome 瀏覽器並允許麥克風權限；多數裝置不支援蒙古語錄音或發音，此時可改用文字輸入、給對方看畫面。</div>
+</div>
 
-    <div class="phrasebook-cat">🙋 打招呼與基本禮貌</div>
-    <div id="phrasebook-greeting"></div>
-    <div class="phrasebook-cat">🍜 餐廳與飲食</div>
-    <div id="phrasebook-food"></div>
-    <div class="phrasebook-cat">🛍️ 購物與殺價</div>
-    <div id="phrasebook-shopping"></div>
-    <div class="phrasebook-cat">🚕 交通與方向</div>
-    <div id="phrasebook-transport"></div>
-    <div class="phrasebook-cat">🆘 緊急狀況</div>
-    <div id="phrasebook-emergency"></div>
-  </section>
+<div class="phrasebook-cat">🙋 打招呼與基本禮貌</div>
+<div id="phrasebook-greeting"></div>
+<div class="phrasebook-cat">🍜 餐廳與飲食</div>
+<div id="phrasebook-food"></div>
+<div class="phrasebook-cat">🛍️ 購物與殺價</div>
+<div id="phrasebook-shopping"></div>
+<div class="phrasebook-cat">🚕 交通與方向</div>
+<div id="phrasebook-transport"></div>
+<div class="phrasebook-cat">🆘 緊急狀況</div>
+<div id="phrasebook-emergency"></div>
+</section>
 
-  <!-- ================= INFO ================= -->
-  <section class="panel" id="panel-info">
-    <div class="info-card">
-      <h3>💱 換匯 Currency</h3>
-      <p>台灣沒有可直接換蒙圖的據點，先在台灣換美金，抵達後在當地換蒙圖。</p>
-      <ul>
-        <li>機場 24 小時換匯櫃檯</li>
-        <li>烏蘭巴托國營百貨（State Department Store）約 4F</li>
-        <li>住宿／Tour／小費常用美金；大型商場也常收美金；刷卡注意是否需要 PIN 碼</li>
-      </ul>
-    </div>
-    <div class="info-card">
-      <h3>📶 網路 SIM 卡</h3>
-      <p>不需事先準備，買 SIM 需出示護照。Unitel 在郊區覆蓋率較好，部分店家只收蒙圖現金，記得帶。</p>
-      <ul>
-        <li>機場內 Unitel（08:00–19:00，也有自助機台）</li>
-        <li>國營百貨對面 Unitel 門市（週一至週五 09:00–17:00；週六日 10:00–17:00）</li>
-        <li>國營百貨內「Mobi.com」（5F）</li>
-      </ul>
-    </div>
-    <div class="info-card">
-      <h3>✉️ 明信片與郵票</h3>
-      <p>建議到市區最大郵局購買。Google Map 名稱：Монгол Шуудан（營業到 6:30）</p>
-    </div>
-    <div class="info-card">
-      <h3>🎒 戈壁行李重點</h3>
-      <ul>
-        <li>國內線限重 15kg，建議軟包</li>
-        <li>日夜溫差大：白天 25–30°C，夜晚驟降 10–15°C</li>
-        <li>水資源少，建議帶濕紙巾並做好保濕</li>
-        <li>每段車程數小時，可帶暈車藥</li>
-      </ul>
-      <p style="margin-top:10px;">官方建議清單：背包/軟包＋防水罩、日用背包、頭燈、備用電池、常用藥、防水健行鞋、防水夾克/外褲、抓絨衣、棉T、長袖襯衫、輕便長褲、短褲、遮陽帽、涼鞋、太陽眼鏡、防曬、防蟲噴霧、Ziploc袋、保險確認函複印本、緊急聯絡電話</p>
-    </div>
-    <div class="info-card">
-      <h3>🍲 蒙古美食</h3>
-      <p style="font-weight:700;margin-top:10px;">烏蘭巴托</p>
-      <ul>
-        <li><b>The Bull Hot Pot Restaurant</b>（火鍋餐廳／4.3★／861則評論，Beijing St 附近，近中國大使館）── <a href="https://maps.app.goo.gl/csWPonRyzsNsAvpr6?g_st=ic" target="_blank">Google Map</a></li>
-        <li><b>Modern Nomads 2</b>（蒙古傳統料理／3.8★／890則評論，馬奶茶、烤羊肉、燒烤石頭肉，近 H9 Hotel）── <a href="https://www.google.com/maps/place/Modern+Nomads+2/@47.9203526,106.9218373,17z/data=!3m1!4b1!4m6!3m5!1s0x5d9692413978ae8b:0xf140983f4c37f89!8m2!3d47.9203526!4d106.9218373!16s%2Fg%2F11btvg9qyk" target="_blank">Google Map</a></li>
-      </ul>
-    </div>
-    <div class="info-card">
-      <h3>🛍️ 蒙古逛街</h3>
-      <p style="font-weight:700;margin-top:10px;">烏蘭巴托</p>
-      <ul>
-        <li>（待補充）</li>
-      </ul>
-    </div>
-    <div class="info-card">
-      <h3>🔗 參考連結</h3>
-      <p><a href="https://www.tripadvisor.com/Attraction_Review-g293956-d2390064-Reviews-Tumen_Ekh_Ensemble-Ulaanbaatar.html" target="_blank">喉音／馬頭琴表演介紹（Tumen Ekh Ensemble）</a></p>
-      <p><a href="https://www.backpackers.com.tw/forum/showthread.php?t=10621915" target="_blank">背包客棧蒙古遊記參考</a></p>
-    </div>
-    <div class="info-card">
-      <h3>🇰🇷 韓國入境須知</h3>
-      <p>台灣旅客持有效護照享 90 天免簽證，且 K-ETA（電子旅行許可）豁免延長至 2026/12/31 → <b>這趟不用辦 K-ETA</b>。2026 年起紙本入境卡（小黃卡）取消，改為全面電子化，所以行前唯一必辦的是「電子入境卡 e-Arrival Card」。</p>
-      <p style="margin-top:10px;"><b>✅ 電子入境卡 e-Arrival Card（必辦・免費）</b></p>
-      <ul>
-        <li>對象：所有旅客都要填（已持有效 K-ETA 或已辦 SeS 自動通關者才能免填）</li>
-        <li>時間：建議在<b>抵達韓國前 72 小時內</b>上網申請（也就是 8/7 前 3 天內，約 8/4 之後皆可）</li>
-        <li>網址：<a href="https://www.e-arrivalcard.go.kr" target="_blank">e-arrivalcard.go.kr</a></li>
-        <li>需準備資訊：護照資料（英文姓名、護照號碼、效期、國籍、出生日期）、入境目的、抵達／離境日期、航班資訊（8/7 OM303 抵達仁川）、韓國住宿地址（Hotel Midcity Myeongdong, 30 Dadong-gil, Jung-gu, Seoul，電話 +82-2-3788-5888）、聯絡方式、健康與安全問卷</li>
-        <li>完成後記得截圖或存下確認信 QR Code／PDF，入境時備查</li>
-      </ul>
-      <p style="margin-top:10px;"><b>不需要準備：K-ETA</b>（台灣旅客豁免至 2026/12/31，這趟免申請）</p>
-      <p style="margin-top:10px;"><b>非必要、可略過：</b></p>
-      <ul>
-        <li>SeS 自動通關：需本人親臨韓國機場現場註冊、效期5年，適合常往返韓國的人，單次旅遊不必特地辦</li>
-        <li>Q-Code 健康申報：台灣直飛入境通常免填，除非入境前21天內去過重點檢疫地區或有症狀</li>
-        <li>海關申報：沒有申報物品可直接走免申報通道；超額外幣（逾1萬美元）／酒類（逾2000ml）／香菸／禮品（逾800美元）才需申報</li>
-      </ul>
-      <p style="margin-top:10px;">其他提醒：行動電源、暖暖包（不論拆封與否）禁止託運，須隨身攜帶；勿攜帶豬肉製品（含肉鬆、肉泡麵）入境，違規罰款高。</p>
-      <p><a href="https://www.chictrip.com.tw/blog/country/korea/2026-korea-e-arrival-card" target="_blank">2026韓國入境卡教學（去趣 chicTrip）</a></p>
-      <p><a href="https://www.funliday.com/posts/2026-korea-entry/" target="_blank">2026韓國入境申請完整教學（Funliday）</a></p>
-      <p><a href="https://blog.eztravel.com.tw/enter-korea/" target="_blank">2026最新韓國入境教學（易遊網）</a></p>
-    </div>
-    <div class="info-card">
-      <h3>🏘️ 益善洞韓屋村</h3>
-      <p>首爾最古老韓屋村之一，韓屋改造成咖啡廳、選物店，巷弄氛圍很適合拍照散策，建議安排 1.5–3 小時。</p>
-      <ul>
-        <li>交通：地鐵鐘路3街站（1、3、5號線）4號或6號出口，步行約3–5分鐘</li>
-        <li>人氣鹽可頌：小夏鹽田、自然島鹽麵包</li>
-        <li>順遊：可上午先逛景福宮，下午再到益善洞</li>
-      </ul>
-      <p><a href="https://www.bring-you.info/zh-tw/ikseon-dong" target="_blank">益善洞韓屋村美食咖啡廳攻略（BringYou）</a></p>
-    </div>
-  </section>
+<!-- ================= INFO ================= -->
+<section class="panel" id="panel-info">
+<div class="info-card">
+<h3>💱 換匯 Currency</h3>
+<p>台灣沒有可直接換蒙圖的據點，先在台灣換美金，抵達後在當地換蒙圖。</p>
+<ul>
+<li>機場 24 小時換匯櫃檯</li>
+<li>烏蘭巴托國營百貨（State Department Store）約 4F</li>
+<li>住宿／Tour／小費常用美金；大型商場也常收美金；刷卡注意是否需要 PIN 碼</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>📶 網路 SIM 卡</h3>
+<p>不需事先準備，買 SIM 需出示護照。Unitel 在郊區覆蓋率較好，部分店家只收蒙圖現金，記得帶。</p>
+<ul>
+<li>機場內 Unitel（08:00–19:00，也有自助機台）</li>
+<li>國營百貨對面 Unitel 門市（週一至週五 09:00–17:00；週六日 10:00–17:00）</li>
+<li>國營百貨內「Mobi.com」（5F）</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>✉️ 明信片與郵票</h3>
+<p>建議到市區最大郵局購買。Google Map 名稱：Монгол Шуудан（營業到 6:30）</p>
+</div>
+<div class="info-card">
+<h3>🎒 戈壁行李重點</h3>
+<ul>
+<li>國內線限重 15kg，建議軟包</li>
+<li>日夜溫差大：白天 25–30°C，夜晚驟降 10–15°C</li>
+<li>水資源少，建議帶濕紙巾並做好保濕</li>
+<li>每段車程數小時，可帶暈車藥</li>
+</ul>
+<p style="margin-top:10px;">官方建議清單：背包/軟包＋防水罩、日用背包、頭燈、備用電池、常用藥、防水健行鞋、防水夾克/外褲、抓絨衣、棉T、長袖襯衫、輕便長褲、短褲、遮陽帽、涼鞋、太陽眼鏡、防曬、防蟲噴霧、Ziploc袋、保險確認函複印本、緊急聯絡電話</p>
+</div>
+<div class="info-card">
+<h3>🍲 蒙古美食</h3>
+<p style="font-weight:700;margin-top:10px;">烏蘭巴托</p>
+<ul>
+<li><b>The Bull Hot Pot Restaurant</b>（火鍋餐廳／4.3★／861則評論，Beijing St 附近，近中國大使館）── <a href="https://maps.app.goo.gl/csWPonRyzsNsAvpr6?g_st=ic" target="_blank">Google Map</a></li>
+<li><b>Golden Gobi Chocolate</b>（巧克力店／4.2★，地址：Ulaanbaatar, Building 5，郵遞區號 15170，營業至19:00）── <a href="https://www.google.com/maps/search/?api=1&query=Golden%20Gobi%20Chocolate%2C%20Ulaanbaatar" target="_blank">Google Map</a></li>
+</ul>
+</div>
+<div class="info-card">
+<h3>🛍️ 蒙古逛街</h3>
+<p style="font-weight:700;margin-top:10px;">烏蘭巴托</p>
+<ul>
+<li>（待補充；8/6 逛街日目前已排國營百貨 State Department Store，詳見行程頁）</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>🔗 參考連結</h3>
+<p><a href="https://www.tripadvisor.com/Attraction_Review-g293956-d2390064-Reviews-Tumen_Ekh_Ensemble-Ulaanbaatar.html" target="_blank">喉音／馬頭琴表演介紹（Tumen Ekh Ensemble）</a></p>
+<p><a href="https://www.backpackers.com.tw/forum/showthread.php?t=10621915" target="_blank">背包客棧蒙古遊記參考</a></p>
+</div>
+<div class="info-card">
+<h3>🇰🇷 韓國入境須知</h3>
+<p>台灣旅客持有效護照享 90 天免簽證，且 K-ETA（電子旅行許可）豁免延長至 2026/12/31 → <b>這趟不用辦 K-ETA</b>。2026 年起紙本入境卡（小黃卡）取消，改為全面電子化，所以行前唯一必辦的是「電子入境卡 e-Arrival Card」。</p>
+<p style="margin-top:10px;"><b>✅ 電子入境卡 e-Arrival Card（必辦・免費）</b></p>
+<ul>
+<li>對象：所有旅客都要填（已持有效 K-ETA 或已辦 SeS 自動通關者才能免填）</li>
+<li>時間：建議在<b>抵達韓國前 72 小時內</b>上網申請（也就是 8/7 前 3 天內，約 8/4 之後皆可）</li>
+<li>網址：<a href="https://www.e-arrivalcard.go.kr" target="_blank">e-arrivalcard.go.kr</a></li>
+<li>需準備資訊：護照資料（英文姓名、護照號碼、效期、國籍、出生日期）、入境目的、抵達／離境日期、航班資訊（8/7 OM303 抵達仁川）、韓國住宿地址（Hotel Midcity Myeongdong, 30 Dadong-gil, Jung-gu, Seoul，電話 +82-2-3788-5888）、聯絡方式、健康與安全問卷</li>
+<li>完成後記得截圖或存下確認信 QR Code／PDF，入境時備查</li>
+</ul>
+<p style="margin-top:10px;"><b>不需要準備：K-ETA</b>（台灣旅客豁免至 2026/12/31，這趟免申請）</p>
+<p style="margin-top:10px;"><b>非必要、可略過：</b></p>
+<ul>
+<li>SeS 自動通關：需本人親臨韓國機場現場註冊、效期5年，適合常往返韓國的人，單次旅遊不必特地辦</li>
+<li>Q-Code 健康申報：台灣直飛入境通常免填，除非入境前21天內去過重點檢疫地區或有症狀</li>
+<li>海關申報：沒有申報物品可直接走免申報通道；超額外幣（逾1萬美元）／酒類（逾2000ml）／香菸／禮品（逾800美元）才需申報</li>
+</ul>
+<p style="margin-top:10px;">其他提醒：行動電源、暖暖包（不論拆封與否）禁止託運，須隨身攜帶；勿攜帶豬肉製品（含肉鬆、肉泡麵）入境，違規罰款高。</p>
+<p><a href="https://www.chictrip.com.tw/blog/country/korea/2026-korea-e-arrival-card" target="_blank">2026韓國入境卡教學（去趣 chicTrip）</a></p>
+<p><a href="https://www.funliday.com/posts/2026-korea-entry/" target="_blank">2026韓國入境申請完整教學（Funliday）</a></p>
+<p><a href="https://blog.eztravel.com.tw/enter-korea/" target="_blank">2026最新韓國入境教學（易遊網）</a></p>
+</div>
+<div class="info-card">
+<h3>🏘️ 益善洞韓屋村</h3>
+<p>首爾最古老韓屋村之一，韓屋改造成咖啡廳、選物店，巷弄氛圍很適合拍照散策，建議安排 1.5–3 小時。</p>
+<ul>
+<li>交通：地鐵鐘路3街站（1、3、5號線）4號或6號出口，步行約3–5分鐘</li>
+<li>人氣鹽可頌：小夏鹽田、自然島鹽麵包</li>
+<li>順遊：可上午先逛景福宮，下午再到益善洞</li>
+</ul>
+<p><a href="https://www.bring-you.info/zh-tw/ikseon-dong" target="_blank">益善洞韓屋村美食咖啡廳攻略（BringYou）</a></p>
+</div>
+</section>
 
 </main>
+
+<footer style="text-align:center;font-size:11px;color:var(--ink-soft);padding:8px 0 30px;">
+行程手冊 v1.2 ・ 更新於 2026-07-13 12:10（台北時間）
+</footer>
 
 <script>
 /* ---------------- DATA ---------------- */
 const days = [
-  {
-    date:"7/30", iso:"2026-07-30", title:"抵達蒙古", loc:"烏蘭巴托",
-    tag:"抵達", tagColor:"var(--sky-deep)", hotel:"H9 Hotel Nine Ulaanbaatar（Amar street 2, Sukhbaatar 8th khoroo／14:00後可入住）",
-    maps:[
-      {label:"烏蘭巴托", query:"Ulaanbaatar, Mongolia"},
-      {label:"H9 Hotel Nine Ulaanbaatar", query:"H9 Hotel Nine Ulaanbaatar"}
-    ],
-    body:[
-      {h:"航班（訂位代號 DQYLG4）", items:[
-        "BR891 長榮航空　07:00 台北桃園(T2) → 08:50 香港(T1)",
-        "OM298 MIAT蒙古航空　12:05 香港(T1) → 16:45 烏蘭巴托 Chinggis Khaan"
-      ]},
-      {h:"待辦", items:["蒙古紙本簽證相關資料","美金換蒙幣／網路卡","機場接送到飯店放行李","找 Bobby 付尾款"]}
-    ]
-  },
-  {
-    date:"7/31", iso:"2026-07-31", title:"特勒吉 Day 1", loc:"Terelj 國家公園",
-    tag:"特勒吉", tagColor:"var(--felt)", hotel:"度假村（2人1室，附私人衛浴）",
-    maps:[
-      {label:"Terelj 國家公園", query:"Gorkhi-Terelj National Park"},
-      {label:"龜石 Turtle Rock", query:"Turtle Rock Terelj Mongolia"},
-      {label:"Aryabal 冥想寺廟", query:"Aryabal Meditation Temple"}
-    ],
-    body:[
-      {h:"行程", items:[
-        "10:00 出發前往 Terelj 國家公園（車程2小時）",
-        "參觀龜石 Turtle Rock",
-        "參觀 Aryabal 冥想寺廟",
-        "拜訪蒙古遊牧家庭，蒙古包內用午餐",
-        "短暫騎馬體驗",
-        "Check-in 度假村"
-      ]},
-    ],
-    note:"晚餐自費（度假村餐廳選擇多）"
-  },
-  {
-    date:"8/1", iso:"2026-08-01", title:"特勒吉 Day 2", loc:"成吉思汗雕像博物館",
-    tag:"特勒吉", tagColor:"var(--felt)", hotel:"H9 Hotel",
-    maps:[
-      {label:"成吉思汗雕像博物館", query:"Genghis Khan Equestrian Statue"}
-    ],
-    body:[
-      {h:"行程", items:[
-        "07:30–10:30 度假村早餐",
-        "11:00 司機接送前往成吉思汗雕像博物館（車程30分）",
-        "騎鷹體驗",
-        "車程2小時返回烏蘭巴托"
-      ]},
-      {h:"加碼選項", items:["蒙古傳統服飾體驗（成吉思汗雕像園區內，費用需自付）"]}
-    ],
-    note:"待確認：騎鷹體驗實際內容；傳統服飾體驗確切價格"
-  },
-  {
-    date:"8/2", iso:"2026-08-02", title:"戈壁 Day 1 出發", loc:"Eagle Valley Yoliin Am 國家公園",
-    tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（蒙古包，含晚餐）",
-    maps:[
-      {label:"Yoliin Am / Eagle Valley", query:"Yolyn Am Eagle Valley Gobi Gurvansaikhan National Park"}
-    ],
-    body:[
-      {h:"航班（訂位代號 EKOWYW）", items:["OM91 MIAT蒙古航空　17:30 烏蘭巴托 Chinggis Khaan → 18:40 達蘭扎達嘎德 Gurvan Saikhan"]},
-      {h:"行程", items:[
-        "H9 Hotel Check-out（12:00）",
-        "13:00 旅行社接送",
-        "抵達 Eagle Valley Yoliin Am 國家公園"
-      ]}
-    ],
-    note:"航班已確認（OM91，17:30起飛，國內線行李限重15kg）；待確認：Check-out 12:00 與行程 13:00 開始之間的行李銜接方式，落地 18:40 後是否還來得及進國家公園"
-  },
-  {
-    date:"8/3", iso:"2026-08-03", title:"洪戈爾沙丘", loc:"Khongoryn Els",
-    tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（含早午晚餐）",
-    maps:[
-      {label:"洪戈爾沙丘 Khongoryn Els", query:"Khongoryn Els sand dunes"}
-    ],
-    body:[
-      {h:"行程", items:["健行、探訪自然奇觀","攀登沙丘","洪格爾沙丘騎駱駝一小時（體力大魔王關卡）"]},
-      {h:"晚上", items:[
-        "Emery 想在戈壁對著沙丘星空吶喊紓壓一下",
-        "順便把「社死的寄信事件」正式塵封在戈壁裡，全員封口不再提起 🤐"
-      ]}
-    ]
-  },
-  {
-    date:"8/4", iso:"2026-08-04", title:"烈焰懸崖", loc:"Flaming Cliffs",
-    tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（含早午晚餐）",
-    maps:[
-      {label:"烈焰懸崖 Flaming Cliffs", query:"Bayanzag Flaming Cliffs Mongolia"}
-    ],
-    body:[
-      {h:"行程", items:["健行、探訪自然奇觀","攀登懸崖、攝影","尋找恐龍蛋"]}
-    ]
-  },
-  {
-    date:"8/5", iso:"2026-08-05", title:"返回烏蘭巴托", loc:"戈壁自然歷史博物館",
-    tag:"戈壁", tagColor:"var(--rust)", hotel:"H9 Hotel（推測，建議與旅行社確認）",
-    maps:[
-      {label:"戈壁自然歷史博物館", query:"Natural History Museum Dalanzadgad Mongolia"},
-      {label:"達蘭扎達嘎德機場", query:"Dalanzadgad Airport"}
-    ],
-    body:[
-      {h:"航班（訂位代號 EKOWYW）", items:["OM92 MIAT蒙古航空　19:20 達蘭扎達嘎德 Gurvan Saikhan → 20:25 烏蘭巴托 Chinggis Khaan"]},
-      {h:"行程", items:[
-        "參觀戈壁自然歷史博物館並共進午餐",
-        "17:00 前抵達機場",
-        "司機機場接送至酒店"
-      ]}
-    ],
-    note:"含早、午餐（晚餐需自理）"
-  },
-  {
-    date:"8/6", iso:"2026-08-06", title:"烏蘭巴托逛街日", loc:"市區",
-    tag:"UB", tagColor:"var(--sky-deep)", hotel:"H9 Hotel",
-    maps:[
-      {label:"國營百貨 State Department Store", query:"State Department Store Ulaanbaatar"},
-      {label:"甘丹寺", query:"Gandantegchinlen Monastery Ulaanbaatar"},
-      {label:"成吉思汗博物館", query:"Chinggis Khaan National Museum Ulaanbaatar"}
-    ],
-    body:[
-      {h:"行程", items:[
-        "國營百貨（09:00–22:00）",
-        "市區景點：甘丹寺、成吉思汗博物館 等",
-        "17:00 提早到場排隊買票",
-        "18:00 喉音／馬頭琴／軟骨功／薩滿舞蹈表演（約1小時）"
-      ]}
-    ],
-    note:"待確認：百貨＋景點＋表演排隊時間偏緊，建議先排優先順序"
-  },
-  {
-    date:"8/7", iso:"2026-08-07", title:"飛往首爾", loc:"首爾", segmentStart:true, segment:"首爾 SEOUL",
-    tag:"首爾", tagColor:"var(--seoul-deep)", hotel:"Hotel Midcity Myeongdong 明洞中城酒店（30 Dadong-gil, Jung-gu, Seoul／+82-2-3788-5888／15:00後可入住，共2晚）",
-    maps:[
-      {label:"Hotel Midcity Myeongdong 明洞中城酒店", query:"Hotel Midcity Myeongdong Seoul"}
-    ],
-    body:[
-      {h:"航班（訂位代號 ED5IZX）", items:["OM303 MIAT蒙古航空　10:40 烏蘭巴托 Chinggis Khaan → 14:50 仁川(T1)"]},
-      {h:"行程", items:["抵達仁川後入住飯店","晚餐：找一間醬蟹專賣店開吃 🦀"]},
-      {h:"入境提醒", items:[
-        "台灣旅客免申請 K-ETA（豁免延長至 2026/12/31）",
-        "2026 年起紙本入境卡取消，需改填「電子入境卡 e-Arrival Card」",
-        "建議在抵達前 3 天（72小時）內線上申報，存好QR Code／PDF"
-      ]}
-    ],
-    note:"住宿與航班皆已確認（Hotel Midcity Myeongdong，8/7–8/9共2晚；OM303 10:40起飛）；出發前別忘了填 e-Arrival Card"
-  },
-  {
-    date:"8/8", iso:"2026-08-08", title:"首爾：古宮＋韓屋巷弄", loc:"景福宮・益善洞",
-    tag:"首爾", tagColor:"var(--seoul-deep)", hotel:"Hotel Midcity Myeongdong 明洞中城酒店",
-    maps:[
-      {label:"景福宮", query:"Gyeongbokgung Palace"},
-      {label:"益善洞韓屋村", query:"Ikseon-dong Hanok Village Seoul"}
-    ],
-    body:[
-      {h:"上午", items:["景福宮：可安排上午前往，避開下午人潮","（可加碼韓服體驗，穿韓服逛宮殿拍照）"]},
-      {h:"下午", items:[
-        "益善洞韓屋村：韓屋改造的咖啡廳＋選物店巷弄，很好拍",
-        "必買鹽可頌（推薦「小夏鹽田」「自然島鹽麵包」，人多的話建議外帶）",
-        "韓屋體驗／散策：巷弄呈放射狀，隨意走走即可，不容易真的迷路"
-      ]}
-    ],
-    note:"參考：益善洞逛街文章建議安排 1.5–3 小時，週末下午13:00–17:00人潮最多"
-  },
-  {
-    date:"8/9", iso:"2026-08-09", title:"首爾 → 回台", loc:"首爾",
-    tag:"首爾", tagColor:"var(--seoul-deep)", hotel:"回程（Hotel Midcity Myeongdong 12:00前退房）",
-    maps:[
-      {label:"首爾", query:"Seoul, South Korea"}
-    ],
-    body:[
-      {h:"航班（訂位代號 EDA5XL）", items:["CI163 中華航空　20:05 仁川(T2) → 21:50 台北桃園(T1)"]},
-      {h:"行程", items:["上午自由活動／採買伴手禮","12:00前飯店退房","預留機場交通與退稅時間"]}
-    ],
-    note:"回程航班已確認：CI163，20:05 仁川起飛"
-  },
+{
+date:"7/30", iso:"2026-07-30", title:"抵達蒙古", loc:"烏蘭巴托",
+tag:"抵達", tagColor:"var(--sky-deep)", hotel:"H9 Hotel Nine Ulaanbaatar（Amar street 2, Sukhbaatar 8th khoroo／14:00後可入住）",
+maps:[
+{label:"烏蘭巴托", query:"Ulaanbaatar, Mongolia"},
+{label:"H9 Hotel Nine Ulaanbaatar", query:"H9 Hotel Nine Ulaanbaatar"}
+],
+body:[
+{h:"航班（訂位代號 DQYLG4）", items:[
+"BR891 長榮航空 07:00 台北桃園(T2) → 08:50 香港(T1)",
+"OM298 MIAT蒙古航空 12:05 香港(T1) → 16:45 烏蘭巴托 Chinggis Khaan"
+]},
+{h:"待辦", items:["蒙古紙本簽證相關資料","美金換蒙幣／網路卡","機場接送到飯店放行李","找 Bobby 付尾款"]}
+]
+},
+{
+date:"7/31", iso:"2026-07-31", title:"特勒吉 Day 1", loc:"Terelj 國家公園",
+tag:"特勒吉", tagColor:"var(--felt)", hotel:"度假村（2人1室，附私人衛浴）",
+maps:[
+{label:"Terelj 國家公園", query:"Gorkhi-Terelj National Park"},
+{label:"龜石 Turtle Rock", query:"Turtle Rock Terelj Mongolia"},
+{label:"Aryabal 冥想寺廟", query:"Aryabal Meditation Temple"}
+],
+body:[
+{h:"行程", items:[
+"10:00 出發前往 Terelj 國家公園（車程2小時）",
+"參觀龜石 Turtle Rock",
+"參觀 Aryabal 冥想寺廟",
+"拜訪蒙古遊牧家庭，蒙古包內用午餐",
+"短暫騎馬體驗",
+"Check-in 度假村"
+]},
+],
+note:"晚餐自費（度假村餐廳選擇多）"
+},
+{
+date:"8/1", iso:"2026-08-01", title:"特勒吉 Day 2", loc:"成吉思汗雕像博物館",
+tag:"特勒吉", tagColor:"var(--felt)", hotel:"H9 Hotel",
+maps:[
+{label:"成吉思汗雕像博物館", query:"Genghis Khan Equestrian Statue"}
+],
+body:[
+{h:"行程", items:[
+"07:30–10:30 度假村早餐",
+"11:00 司機接送前往成吉思汗雕像博物館（車程30分）",
+"騎鷹體驗",
+"車程2小時返回烏蘭巴托"
+]},
+{h:"加碼選項", items:["蒙古傳統服飾體驗（成吉思汗雕像園區內，費用需自付）"]}
+],
+note:"待確認：騎鷹體驗實際內容；傳統服飾體驗確切價格"
+},
+{
+date:"8/2", iso:"2026-08-02", title:"戈壁 Day 1 出發", loc:"Eagle Valley Yoliin Am 國家公園",
+tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（蒙古包，含晚餐）",
+maps:[
+{label:"Yoliin Am / Eagle Valley", query:"Yolyn Am Eagle Valley Gobi Gurvansaikhan National Park"}
+],
+body:[
+{h:"航班（訂位代號 EKOWYW）", items:["OM91 MIAT蒙古航空 17:30 烏蘭巴托 Chinggis Khaan → 18:40 達蘭扎達嘎德 Gurvan Saikhan"]},
+{h:"行程", items:[
+"H9 Hotel Check-out（12:00）",
+"13:00 旅行社接送",
+"抵達 Eagle Valley Yoliin Am 國家公園"
+]}
+],
+note:"航班已確認（OM91，17:30起飛，國內線行李限重15kg）；待確認：Check-out 12:00 與行程 13:00 開始之間的行李銜接方式，落地 18:40 後是否還來得及進國家公園"
+},
+{
+date:"8/3", iso:"2026-08-03", title:"洪戈爾沙丘", loc:"Khongoryn Els",
+tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（含早午晚餐）",
+maps:[
+{label:"洪戈爾沙丘 Khongoryn Els", query:"Khongoryn Els sand dunes"}
+],
+body:[
+{h:"行程", items:["健行、探訪自然奇觀","攀登沙丘","洪格爾沙丘騎駱駝一小時（體力大魔王關卡）"]},
+{h:"晚上", items:[
+"Emery 想在戈壁對著沙丘星空吶喊紓壓一下",
+"順便把「社死的寄信事件」正式塵封在戈壁裡，全員封口不再提起 🤐"
+]}
+]
+},
+{
+date:"8/4", iso:"2026-08-04", title:"烈焰懸崖", loc:"Flaming Cliffs",
+tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（含早午晚餐）",
+maps:[
+{label:"烈焰懸崖 Flaming Cliffs", query:"Bayanzag Flaming Cliffs Mongolia"}
+],
+body:[
+{h:"行程", items:["健行、探訪自然奇觀","攀登懸崖、攝影","尋找恐龍蛋"]}
+]
+},
+{
+date:"8/5", iso:"2026-08-05", title:"返回烏蘭巴托", loc:"戈壁自然歷史博物館",
+tag:"戈壁", tagColor:"var(--rust)", hotel:"烏蘭巴托飯店 Ulaanbaatar Hotel（8/5–8/7，共2晚）",
+maps:[
+{label:"戈壁自然歷史博物館", query:"Natural History Museum Dalanzadgad Mongolia"},
+{label:"達蘭扎達嘎德機場", query:"Dalanzadgad Airport"},
+{label:"烏蘭巴托飯店 Ulaanbaatar Hotel", query:"Ulaanbaatar Hotel, B.Altangerel street-7, Sukhbaatar district, Ulaanbaatar, Mongolia"}
+],
+body:[
+{h:"航班（訂位代號 EKOWYW）", items:["OM92 MIAT蒙古航空 19:20 達蘭扎達嘎德 Gurvan Saikhan → 20:25 烏蘭巴托 Chinggis Khaan"]},
+{h:"行程", items:[
+"參觀戈壁自然歷史博物館並共進午餐",
+"17:00 前抵達機場",
+"司機機場接送至酒店"
+]}
+],
+note:"含早、午餐（晚餐需自理）；烏蘭巴托飯店已確認（8/5–8/7，共2晚）"
+},
+{
+date:"8/6", iso:"2026-08-06", title:"烏蘭巴托逛街日", loc:"市區",
+tag:"UB", tagColor:"var(--sky-deep)", hotel:"烏蘭巴托飯店 Ulaanbaatar Hotel（8/5–8/7）",
+maps:[
+{label:"國營百貨 State Department Store", query:"State Department Store Ulaanbaatar"},
+{label:"甘丹寺", query:"Gandantegchinlen Monastery Ulaanbaatar"},
+{label:"成吉思汗博物館", query:"Chinggis Khaan National Museum Ulaanbaatar"}
+],
+body:[
+{h:"行程", items:[
+"國營百貨（09:00–22:00）",
+"市區景點：甘丹寺、成吉思汗博物館 等",
+"17:00 提早到場排隊買票",
+"18:00 喉音／馬頭琴／軟骨功／薩滿舞蹈表演（約1小時）"
+]}
+],
+note:"待確認：百貨＋景點＋表演排隊時間偏緊，建議先排優先順序"
+},
+{
+date:"8/7", iso:"2026-08-07", title:"飛往首爾", loc:"首爾", segmentStart:true, segment:"首爾 SEOUL",
+tag:"首爾", tagColor:"var(--seoul-deep)", hotel:"Hotel Midcity Myeongdong 明洞中城酒店（30 Dadong-gil, Jung-gu, Seoul／+82-2-3788-5888／15:00後可入住，共2晚）",
+maps:[
+{label:"Hotel Midcity Myeongdong 明洞中城酒店", query:"Hotel Midcity Myeongdong Seoul"}
+],
+body:[
+{h:"航班（訂位代號 ED5IZX）", items:["OM303 MIAT蒙古航空 10:40 烏蘭巴托 Chinggis Khaan → 14:50 仁川(T1)"]},
+{h:"行程", items:["抵達仁川後入住飯店","晚餐：找一間醬蟹專賣店開吃 🦀"]},
+{h:"入境提醒", items:[
+"台灣旅客免申請 K-ETA（豁免延長至 2026/12/31）",
+"2026 年起紙本入境卡取消，需改填「電子入境卡 e-Arrival Card」",
+"建議在抵達前 3 天（72小時）內線上申報，存好QR Code／PDF"
+]}
+],
+note:"住宿與航班皆已確認（Hotel Midcity Myeongdong，8/7–8/9共2晚；OM303 10:40起飛）；出發前別忘了填 e-Arrival Card"
+},
+{
+date:"8/8", iso:"2026-08-08", title:"首爾：古宮＋韓屋巷弄", loc:"景福宮・益善洞",
+tag:"首爾", tagColor:"var(--seoul-deep)", hotel:"Hotel Midcity Myeongdong 明洞中城酒店",
+maps:[
+{label:"景福宮", query:"Gyeongbokgung Palace"},
+{label:"益善洞韓屋村", query:"Ikseon-dong Hanok Village Seoul"}
+],
+body:[
+{h:"上午", items:["景福宮：可安排上午前往，避開下午人潮","（可加碼韓服體驗，穿韓服逛宮殿拍照）"]},
+{h:"下午", items:[
+"益善洞韓屋村：韓屋改造的咖啡廳＋選物店巷弄，很好拍",
+"必買鹽可頌（推薦「小夏鹽田」「自然島鹽麵包」，人多的話建議外帶）",
+"韓屋體驗／散策：巷弄呈放射狀，隨意走走即可，不容易真的迷路"
+]}
+],
+note:"參考：益善洞逛街文章建議安排 1.5–3 小時，週末下午13:00–17:00人潮最多"
+},
+{
+date:"8/9", iso:"2026-08-09", title:"首爾 → 回台", loc:"首爾",
+tag:"首爾", tagColor:"var(--seoul-deep)", hotel:"回程（Hotel Midcity Myeongdong 12:00前退房）",
+maps:[
+{label:"首爾", query:"Seoul, South Korea"}
+],
+body:[
+{h:"航班（訂位代號 EDA5XL）", items:["CI163 中華航空 20:05 仁川(T2) → 21:50 台北桃園(T1)"]},
+{h:"行程", items:["上午自由活動／採買伴手禮","12:00前飯店退房","預留機場交通與退稅時間"]}
+],
+note:"回程航班已確認：CI163，20:05 仁川起飛"
+},
 ];
 
 const todoGroups = [
-  { name:"出發前必辦", items:[
-    "準備蒙古紙本簽證相關資料",
-    "買旅遊平安險（須於出發前10天，即7/20前購買）",
-    "買 eSIM",
-    "台灣先換美金（當地再換蒙圖）",
-    "確認機場接送到飯店放行李（7/30）",
-    "找 Bobby 付尾款",
-    "聯繫機場接送（念慈）",
-    "打包戈壁行李（軟包、防水外套、暈車藥、濕紙巾等）",
-    "保險確認函複印本、緊急聯絡電話清單",
-  ]},
-  { name:"行前採購清單", items:[
-    "暈車藥（日本藥妝小白兔）",
-    "小包衛生紙",
-    "濕紙巾",
-    "免洗內褲",
-  ]},
-  { name:"待與導遊／旅行社確認", items:[
-    "騎鷹體驗實際內容與是否需另付小費（8/1）",
-    "蒙古傳統服飾體驗確切價格（8/1）",
-    "H9 退房12:00與戈壁行程13:00開始的行李銜接方式（8/2）",
-    "8/2落地後是否真的還能進國家公園，或行程是否需調整",
-    "戈壁四天每日餐食安排逐一核對（8/2晚餐是否含）",
-    "8/5返回UB後住宿是否仍是H9 Hotel",
-    "8/6百貨＋景點＋表演時間是否會衝突，先排優先順序",
-  ]},
-  { name:"首爾行程（8/7–8/9）待規劃", items:[
-    "填寫韓國電子入境卡 e-Arrival Card（出發前72小時內，台灣免K-ETA至2026/12/31，免簽證）",
-    "訂 UB → 首爾機票",
-    "訂首爾住宿",
-    "確認首爾醬蟹餐廳與益善洞韓屋村路線",
-    "確認首爾回台班機",
-  ]},
+{ name:"出發前必辦", items:[
+"準備蒙古紙本簽證相關資料",
+"買旅遊平安險（須於出發前10天，即7/20前購買）",
+"買 eSIM",
+"台灣先換美金（當地再換蒙圖）",
+"確認機場接送到飯店放行李（7/30）",
+"找 Bobby 付尾款",
+"聯繫機場接送（念慈）",
+"打包戈壁行李（軟包、防水外套、暈車藥、濕紙巾等）",
+"保險確認函複印本、緊急聯絡電話清單",
+]},
+{ name:"行前採購清單", items:[
+"暈車藥（日本藥妝小白兔）",
+"小包衛生紙",
+"濕紙巾",
+"免洗內褲",
+]},
+{ name:"待與導遊／旅行社確認", items:[
+"騎鷹體驗實際內容與是否需另付小費（8/1）",
+"蒙古傳統服飾體驗確切價格（8/1）",
+"H9 退房12:00與戈壁行程13:00開始的行李銜接方式（8/2）",
+"8/2落地後是否真的還能進國家公園，或行程是否需調整",
+"戈壁四天每日餐食安排逐一核對（8/2晚餐是否含）",
+"8/6百貨＋景點＋表演時間是否會衝突，先排優先順序",
+]},
+{ name:"首爾行程（8/7–8/9）待規劃", items:[
+"填寫韓國電子入境卡 e-Arrival Card（出發前72小時內，台灣免K-ETA至2026/12/31，免簽證）",
+"確認首爾醬蟹餐廳與益善洞韓屋村路線",
+]},
 ];
 
 const packingGroups = [
-  { name:"證件與財務", items:[
-    "護照（效期6個月以上）",
-    "簽證紙本資料（蒙古＋韓國）",
-    "旅遊平安險保單／確認函",
-    "美金現金",
-    "信用卡（確認PIN碼）",
-    "緊急聯絡電話清單",
-  ]},
-  { name:"電子產品", items:[
-    "手機＋充電線",
-    "行動電源",
-    "轉接頭／充電器",
-    "eSIM（出發前確認已安裝）",
-    "頭燈或手電筒＋備用電池",
-    "相機（如有）",
-  ]},
-  { name:"衣物", items:[
-    "防水帶帽夾克",
-    "防水外褲",
-    "抓絨衣或羊毛衫",
-    "棉質T恤／長袖襯衫",
-    "輕便長褲、短褲",
-    "襪子、內褲",
-    "遮陽帽",
-    "涼鞋",
-    "防水健行鞋",
-  ]},
-  { name:"個人用品／藥品", items:[
-    "個人常用藥／暈車藥",
-    "防曬用品、太陽眼鏡",
-    "防蟲噴霧／驅蚊劑",
-    "濕紙巾、保濕用品",
-    "密封塑膠袋（Ziploc）",
-    "盥洗用品",
-  ]},
-  { name:"戈壁專用（軟包限重15kg）", items:[
-    "軟式行李袋（非硬殼）",
-    "防水背包罩",
-    "日用背包",
-  ]},
+{ name:"證件與財務", items:[
+"護照（效期6個月以上）",
+"簽證紙本資料（蒙古＋韓國）",
+"旅遊平安險保單／確認函",
+"美金現金",
+"信用卡（確認PIN碼）",
+"緊急聯絡電話清單",
+]},
+{ name:"電子產品", items:[
+"手機＋充電線",
+"行動電源",
+"轉接頭／充電器",
+"eSIM（出發前確認已安裝）",
+"頭燈或手電筒＋備用電池",
+"相機（如有）",
+]},
+{ name:"衣物", items:[
+"防水帶帽夾克",
+"防水外褲",
+"抓絨衣或羊毛衫",
+"棉質T恤／長袖襯衫",
+"輕便長褲、短褲",
+"襪子、內褲",
+"遮陽帽",
+"涼鞋",
+"防水健行鞋",
+]},
+{ name:"個人用品／藥品", items:[
+"個人常用藥／暈車藥",
+"防曬用品、太陽眼鏡",
+"防蟲噴霧／驅蚊劑",
+"濕紙巾、保濕用品",
+"密封塑膠袋（Ziploc）",
+"盥洗用品",
+]},
+{ name:"戈壁專用（軟包限重15kg）", items:[
+"軟式行李袋（非硬殼）",
+"防水背包罩",
+"日用背包",
+]},
 ];
-
 
 const itinPanel = document.getElementById('panel-itinerary');
 const todayISO = new Date().toISOString().slice(0,10);
 
 function mapUrl(query){
-  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
+return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(query);
 }
 
 days.forEach((d,i)=>{
-  if(d.segmentStart){
-    const seg = document.createElement('div');
-    seg.className='segment-label';
-    seg.textContent = d.segment;
-    itinPanel.appendChild(seg);
-  }
-  const isToday = d.iso === todayISO;
-  const card = document.createElement('div');
-  card.className = 'day' + (isToday?' today':'');
-  card.innerHTML = `
-    <div class="day-head" data-idx="${i}">
-      <div class="day-date">${d.date}</div>
-      <div class="day-meta">
-        <div class="day-title">${d.title}</div>
-        <div class="day-loc">${d.loc}${d.maps && d.maps[0] ? ` <a class="map-pin" href="${mapUrl(d.maps[0].query)}" target="_blank" rel="noopener" title="在 Google Map 開啟" onclick="event.stopPropagation()">📍</a>` : ''}</div>
-      </div>
-      <span class="day-tag" style="background:${d.tagColor}">${d.tag}</span>
-      <span class="chev">▾</span>
-    </div>
-    <div class="day-body">
-      ${d.body.map(b=>`<h4>${b.h}</h4><ul>${b.items.map(it=>`<li>${it}</li>`).join('')}</ul>`).join('')}
-      ${d.maps && d.maps.length ? `<h4>📍 地圖</h4><ul class="map-links">${d.maps.map(m=>`<li><a href="${mapUrl(m.query)}" target="_blank" rel="noopener">📍 ${m.label}</a></li>`).join('')}</ul>` : ''}
-      <div class="hotel-line">🏨 ${d.hotel}</div>
-      ${d.note?`<div class="note">⚠️ ${d.note}</div>`:''}
-    </div>
-  `;
-  itinPanel.appendChild(card);
+if(d.segmentStart){
+const seg = document.createElement('div');
+seg.className='segment-label';
+seg.textContent = d.segment;
+itinPanel.appendChild(seg);
+}
+const isToday = d.iso === todayISO;
+const card = document.createElement('div');
+card.className = 'day' + (isToday?' today':'');
+card.innerHTML = `
+<div class="day-head" data-idx="${i}">
+<div class="day-date">${d.date}</div>
+<div class="day-meta">
+<div class="day-title">${d.title}</div>
+<div class="day-loc">${d.loc}${d.maps && d.maps[0] ? ` <a class="map-pin" href="${mapUrl(d.maps[0].query)}" target="_blank" rel="noopener" title="在 Google Map 開啟" onclick="event.stopPropagation()">📍</a>` : ''}</div>
+</div>
+<span class="day-tag" style="background:${d.tagColor}">${d.tag}</span>
+<span class="chev">▾</span>
+</div>
+<div class="day-body">
+${d.body.map(b=>`<h4>${b.h}</h4><ul>${b.items.map(it=>`<li>${it}</li>`).join('')}</ul>`).join('')}
+${d.maps && d.maps.length ? `<h4>📍 地圖</h4><ul class="map-links">${d.maps.map(m=>`<li><a href="${mapUrl(m.query)}" target="_blank" rel="noopener">📍 ${m.label}</a></li>`).join('')}</ul>` : ''}
+<div class="hotel-line">🏨 ${d.hotel}</div>
+${d.note?`<div class="note">⚠️ ${d.note}</div>`:''}
+</div>
+`;
+itinPanel.appendChild(card);
 });
 
 itinPanel.addEventListener('click', e=>{
-  const head = e.target.closest('.day-head');
-  if(!head) return;
-  head.closest('.day').classList.toggle('open');
+const head = e.target.closest('.day-head');
+if(!head) return;
+head.closest('.day').classList.toggle('open');
 });
 
 /* open today's card by default */
@@ -1070,183 +1070,184 @@ const horizonMarker = document.getElementById('horizonMarker');
 function pad(n){return n<10?('0'+n):n;}
 
 if(now < tripStart){
-  const diffDays = Math.ceil((tripStart - now)/86400000);
-  countdownNum.textContent = diffDays;
-  countdownLabel.textContent = "天後出發";
-  horizonFill.style.width = "0%";
-  horizonMarker.style.left = "0%";
+const diffDays = Math.ceil((tripStart - now)/86400000);
+countdownNum.textContent = diffDays;
+countdownLabel.textContent = "天後出發";
+horizonFill.style.width = "0%";
+horizonMarker.style.left = "0%";
 } else if(now >= tripStart && now <= tripEnd){
-  const diffDays = Math.floor((now - tripStart)/86400000)+1;
-  countdownNum.textContent = "Day " + diffDays;
-  countdownLabel.textContent = "旅程進行中";
-  const pct = Math.min(100, ((now-tripStart)/(tripEnd-tripStart))*100);
-  horizonFill.style.width = pct+"%";
-  horizonMarker.style.left = pct+"%";
+const diffDays = Math.floor((now - tripStart)/86400000)+1;
+countdownNum.textContent = "Day " + diffDays;
+countdownLabel.textContent = "旅程進行中";
+const pct = Math.min(100, ((now-tripStart)/(tripEnd-tripStart))*100);
+horizonFill.style.width = pct+"%";
+horizonMarker.style.left = pct+"%";
 } else {
-  countdownNum.textContent = "✓";
-  countdownLabel.textContent = "旅程已結束";
-  horizonFill.style.width = "100%";
-  horizonMarker.style.left = "100%";
+countdownNum.textContent = "✓";
+countdownLabel.textContent = "旅程已結束";
+horizonFill.style.width = "100%";
+horizonMarker.style.left = "100%";
 }
 
 /* ---------------- TABS ---------------- */
 document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
-    if(btn.dataset.tab === 'map'){
-      requestAnimationFrame(()=>{
-        initTripMap();
-        if(tripMap) tripMap.invalidateSize();
-      });
-    }
-  });
+btn.addEventListener('click', ()=>{
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+if(btn.dataset.tab === 'map'){
+requestAnimationFrame(()=>{
+initTripMap();
+if(tripMap) tripMap.invalidateSize();
+});
+}
+});
 });
 
 /* ---------------- MAP ---------------- */
 const mapPoints = [
-  {name:"Chinggis Khaan 國際機場", day:"7/30", color:"#1D4258", lat:47.8494883, lng:106.767309, note:"抵達烏蘭巴托 16:45", region:"mongolia"},
-  {name:"H9 Hotel Nine Ulaanbaatar", day:"7/30", color:"#1D4258", lat:47.9203819, lng:106.9218572, note:"住宿", region:"mongolia"},
-  {name:"Gorkhi-Terelj 國家公園", day:"7/31", color:"#8C7A63", lat:48.1660429, lng:107.7359485, note:"含龜石 Turtle Rock", region:"mongolia"},
-  {name:"Aryabal 冥想寺廟", day:"7/31", color:"#8C7A63", lat:47.9354816, lng:107.4274684, note:"108階步道，山頂視野極佳", region:"mongolia"},
-  {name:"成吉思汗雕像博物館", day:"8/1", color:"#8C7A63", lat:47.8081558, lng:107.5298063, note:"騎鷹體驗、傳統服飾體驗", region:"mongolia"},
-  {name:"Dalanzadgad 機場", day:"8/2 · 8/5", color:"#B5502D", lat:43.6063832, lng:104.3704384, note:"國內線機場", region:"mongolia"},
-  {name:"Yolyn Am / Eagle Valley", day:"8/2", color:"#B5502D", lat:43.5428975, lng:104.0384641, note:"冰河峽谷健行", region:"mongolia"},
-  {name:"Khongoryn Els 洪戈爾沙丘", day:"8/3", color:"#B5502D", lat:43.7413364, lng:102.3348999, note:"騎駱駝、攀登沙丘", region:"mongolia"},
-  {name:"Bayanzag 烈焰懸崖", day:"8/4", color:"#B5502D", lat:44.1398307, lng:103.7158846, note:"尋找恐龍蛋、攝影", region:"mongolia"},
-  {name:"戈壁自然歷史博物館", day:"8/5", color:"#B5502D", lat:43.5838637, lng:104.4266397, note:"含午餐", region:"mongolia"},
-  {name:"State Department Store 國營百貨", day:"8/6", color:"#1D4258", lat:47.9168099, lng:106.9063627, note:"換匯、SIM卡、伴手禮", region:"mongolia"},
-  {name:"甘丹寺", day:"8/6", color:"#1D4258", lat:47.9231136, lng:106.8949841, note:"", region:"mongolia"},
-  {name:"成吉思汗國家博物館", day:"8/6", color:"#1D4258", lat:47.9226227, lng:106.9148724, note:"", region:"mongolia"},
-  {name:"The Bull Hot Pot Restaurant", day:"美食", color:"#1D4258", lat:47.9136489, lng:106.8932524, note:"火鍋餐廳，4.4★", region:"mongolia"},
-  {name:"Modern Nomads 2", day:"美食", color:"#1D4258", lat:47.9203526, lng:106.9218373, note:"蒙古傳統料理，3.8★", region:"mongolia"},
-  {name:"Incheon 仁川國際機場", day:"8/7 · 8/9", color:"#23514E", lat:37.458666, lng:126.4419679, note:"進出首爾", region:"seoul"},
-  {name:"Hotel Midcity Myeongdong", day:"8/7–8/9", color:"#23514E", lat:37.567663, lng:126.9811028, note:"住宿2晚", region:"seoul"},
-  {name:"景福宮", day:"8/8", color:"#23514E", lat:37.579617, lng:126.977041, note:"建議上午前往", region:"seoul"},
-  {name:"益善洞韓屋村", day:"8/8", color:"#23514E", lat:37.5737132, lng:126.9901271, note:"韓屋咖啡廳、鹽可頌", region:"seoul"},
+{name:"Chinggis Khaan 國際機場", day:"7/30", color:"#1D4258", lat:47.8494883, lng:106.767309, note:"抵達烏蘭巴托 16:45", region:"mongolia"},
+{name:"H9 Hotel Nine Ulaanbaatar", day:"7/30", color:"#1D4258", lat:47.9203819, lng:106.9218572, note:"住宿", region:"mongolia"},
+{name:"Gorkhi-Terelj 國家公園", day:"7/31", color:"#8C7A63", lat:48.1660429, lng:107.7359485, note:"含龜石 Turtle Rock", region:"mongolia"},
+{name:"Aryabal 冥想寺廟", day:"7/31", color:"#8C7A63", lat:47.9354816, lng:107.4274684, note:"108階步道，山頂視野極佳", region:"mongolia"},
+{name:"成吉思汗雕像博物館", day:"8/1", color:"#8C7A63", lat:47.8081558, lng:107.5298063, note:"騎鷹體驗、傳統服飾體驗", region:"mongolia"},
+{name:"Dalanzadgad 機場", day:"8/2 · 8/5", color:"#B5502D", lat:43.6063832, lng:104.3704384, note:"國內線機場", region:"mongolia"},
+{name:"Yolyn Am / Eagle Valley", day:"8/2", color:"#B5502D", lat:43.5428975, lng:104.0384641, note:"冰河峽谷健行", region:"mongolia"},
+{name:"Khongoryn Els 洪戈爾沙丘", day:"8/3", color:"#B5502D", lat:43.7413364, lng:102.3348999, note:"騎駱駝、攀登沙丘", region:"mongolia"},
+{name:"Bayanzag 烈焰懸崖", day:"8/4", color:"#B5502D", lat:44.1398307, lng:103.7158846, note:"尋找恐龍蛋、攝影", region:"mongolia"},
+{name:"戈壁自然歷史博物館", day:"8/5", color:"#B5502D", lat:43.5838637, lng:104.4266397, note:"含午餐", region:"mongolia"},
+{name:"State Department Store 國營百貨", day:"8/6", color:"#1D4258", lat:47.9168099, lng:106.9063627, note:"換匯、SIM卡、伴手禮", region:"mongolia"},
+{name:"甘丹寺", day:"8/6", color:"#1D4258", lat:47.9231136, lng:106.8949841, note:"", region:"mongolia"},
+{name:"成吉思汗國家博物館", day:"8/6", color:"#1D4258", lat:47.9226227, lng:106.9148724, note:"", region:"mongolia"},
+{name:"The Bull Hot Pot Restaurant", day:"美食", color:"#1D4258", lat:47.9136489, lng:106.8932524, note:"火鍋餐廳，4.4★", region:"mongolia"},
+{name:"Golden Gobi Chocolate", day:"美食", color:"#1D4258", lat:47.9167863, lng:106.9104126, note:"巧克力店，4.2★", region:"mongolia"},
+{name:"烏蘭巴托飯店 Ulaanbaatar Hotel", day:"8/5–8/7", color:"#1D4258", lat:47.9187798, lng:106.9227172, note:"住宿2晚", region:"mongolia"},
+{name:"Incheon 仁川國際機場", day:"8/7 · 8/9", color:"#23514E", lat:37.458666, lng:126.4419679, note:"進出首爾", region:"seoul"},
+{name:"Hotel Midcity Myeongdong", day:"8/7–8/9", color:"#23514E", lat:37.567663, lng:126.9811028, note:"住宿2晚", region:"seoul"},
+{name:"景福宮", day:"8/8", color:"#23514E", lat:37.579617, lng:126.977041, note:"建議上午前往", region:"seoul"},
+{name:"益善洞韓屋村", day:"8/8", color:"#23514E", lat:37.5737132, lng:126.9901271, note:"韓屋咖啡廳、鹽可頌", region:"seoul"},
 ];
 
 let tripMap = null;
 let mapMarkers = [];
 
 const dayGroups = [
-  {date:"7/30", title:"抵達蒙古", color:"#1D4258", points:["Chinggis Khaan 國際機場","H9 Hotel Nine Ulaanbaatar"]},
-  {date:"7/31", title:"特勒吉 Day 1", color:"#8C7A63", points:["Gorkhi-Terelj 國家公園","Aryabal 冥想寺廟"]},
-  {date:"8/1", title:"特勒吉 Day 2", color:"#8C7A63", points:["成吉思汗雕像博物館"]},
-  {date:"8/2", title:"戈壁 Day 1 出發", color:"#B5502D", points:["Dalanzadgad 機場","Yolyn Am / Eagle Valley"]},
-  {date:"8/3", title:"洪戈爾沙丘", color:"#B5502D", points:["Khongoryn Els 洪戈爾沙丘"]},
-  {date:"8/4", title:"烈焰懸崖", color:"#B5502D", points:["Bayanzag 烈焰懸崖"]},
-  {date:"8/5", title:"返回烏蘭巴托", color:"#B5502D", points:["戈壁自然歷史博物館","Dalanzadgad 機場"]},
-  {date:"8/6", title:"烏蘭巴托逛街日", color:"#1D4258", points:["State Department Store 國營百貨","甘丹寺","成吉思汗國家博物館","The Bull Hot Pot Restaurant","Modern Nomads 2"]},
-  {date:"8/7", title:"飛往首爾", color:"#23514E", points:["Chinggis Khaan 國際機場","Incheon 仁川國際機場","Hotel Midcity Myeongdong"]},
-  {date:"8/8", title:"首爾：古宮＋韓屋巷弄", color:"#23514E", points:["景福宮","益善洞韓屋村"]},
-  {date:"8/9", title:"首爾 → 回台", color:"#23514E", points:["Hotel Midcity Myeongdong","Incheon 仁川國際機場"]},
+{date:"7/30", title:"抵達蒙古", color:"#1D4258", points:["Chinggis Khaan 國際機場","H9 Hotel Nine Ulaanbaatar"]},
+{date:"7/31", title:"特勒吉 Day 1", color:"#8C7A63", points:["Gorkhi-Terelj 國家公園","Aryabal 冥想寺廟"]},
+{date:"8/1", title:"特勒吉 Day 2", color:"#8C7A63", points:["成吉思汗雕像博物館"]},
+{date:"8/2", title:"戈壁 Day 1 出發", color:"#B5502D", points:["Dalanzadgad 機場","Yolyn Am / Eagle Valley"]},
+{date:"8/3", title:"洪戈爾沙丘", color:"#B5502D", points:["Khongoryn Els 洪戈爾沙丘"]},
+{date:"8/4", title:"烈焰懸崖", color:"#B5502D", points:["Bayanzag 烈焰懸崖"]},
+{date:"8/5", title:"返回烏蘭巴托", color:"#B5502D", points:["戈壁自然歷史博物館","Dalanzadgad 機場","烏蘭巴托飯店 Ulaanbaatar Hotel"]},
+{date:"8/6", title:"烏蘭巴托逛街日", color:"#1D4258", points:["State Department Store 國營百貨","甘丹寺","成吉思汗國家博物館","The Bull Hot Pot Restaurant","Golden Gobi Chocolate"]},
+{date:"8/7", title:"飛往首爾", color:"#23514E", points:["Chinggis Khaan 國際機場","Incheon 仁川國際機場","Hotel Midcity Myeongdong"]},
+{date:"8/8", title:"首爾：古宮＋韓屋巷弄", color:"#23514E", points:["景福宮","益善洞韓屋村"]},
+{date:"8/9", title:"首爾 → 回台", color:"#23514E", points:["Hotel Midcity Myeongdong","Incheon 仁川國際機場"]},
 ];
 
 function gmapUrl(lat, lng){
-  return 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng;
+return 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng;
 }
 
 function findPoint(name){
-  return mapPoints.find(p=>p.name===name);
+return mapPoints.find(p=>p.name===name);
 }
 
 function renderDayList(){
-  const container = document.getElementById('dayList');
-  container.innerHTML = '';
-  dayGroups.forEach((g, gi)=>{
-    const el = document.createElement('div');
-    el.className = 'day-list-group';
-    el.dataset.idx = gi;
-    el.innerHTML = `
-      <div class="day-list-head">
-        <div class="day-list-date">${g.date}</div>
-        <span class="day-list-tag" style="background:${g.color}"></span>
-        <div class="day-list-title">${g.title}</div>
-      </div>
-      <ul class="day-list-points">${g.points.map(name=>{
-        const pt = findPoint(name);
-        const link = pt ? `<a href="${gmapUrl(pt.lat, pt.lng)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 ${name}</a>` : name;
-        return `<li>${link}</li>`;
-      }).join('')}</ul>
-    `;
-    el.addEventListener('click', ()=>{
-      document.getElementById('panel-map').scrollIntoView({behavior:'smooth', block:'start'});
-      initTripMap();
-      requestAnimationFrame(()=>{
-        if(!tripMap) return;
-        tripMap.invalidateSize();
-        const pts = mapMarkers.filter(m=>g.points.includes(m.pointName));
-        if(!pts.length) return;
-        const bounds = L.latLngBounds(pts.map(m=>m.getLatLng()));
-        tripMap.fitBounds(bounds, {padding:[40,40], maxZoom:13});
-        pts.forEach(m=>m.openPopup());
-      });
-    });
-    container.appendChild(el);
-  });
+const container = document.getElementById('dayList');
+container.innerHTML = '';
+dayGroups.forEach((g, gi)=>{
+const el = document.createElement('div');
+el.className = 'day-list-group';
+el.dataset.idx = gi;
+el.innerHTML = `
+<div class="day-list-head">
+<div class="day-list-date">${g.date}</div>
+<span class="day-list-tag" style="background:${g.color}"></span>
+<div class="day-list-title">${g.title}</div>
+</div>
+<ul class="day-list-points">${g.points.map(name=>{
+const pt = findPoint(name);
+const link = pt ? `<a href="${gmapUrl(pt.lat, pt.lng)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">📍 ${name}</a>` : name;
+return `<li>${link}</li>`;
+}).join('')}</ul>
+`;
+el.addEventListener('click', ()=>{
+document.getElementById('panel-map').scrollIntoView({behavior:'smooth', block:'start'});
+initTripMap();
+requestAnimationFrame(()=>{
+if(!tripMap) return;
+tripMap.invalidateSize();
+const pts = mapMarkers.filter(m=>g.points.includes(m.pointName));
+if(!pts.length) return;
+const bounds = L.latLngBounds(pts.map(m=>m.getLatLng()));
+tripMap.fitBounds(bounds, {padding:[40,40], maxZoom:13});
+pts.forEach(m=>m.openPopup());
+});
+});
+container.appendChild(el);
+});
 }
 renderDayList();
 
 /* ---------------- TRANSLATE ---------------- */
 const phrasebook = {
-  greeting: [
-    {zh:"你好", local:"Сайн байна уу", pron:"sain bai-na uu"},
-    {zh:"謝謝", local:"Баярлалаа", pron:"bayar-la-laa"},
-    {zh:"對不起", local:"Уучлаарай", pron:"uu-chla-rai"},
-    {zh:"再見", local:"Баяртай", pron:"bayar-tai"},
-    {zh:"是／好", local:"Тийм", pron:"tiim"},
-    {zh:"不是／不", local:"Үгүй", pron:"ugui"},
-  ],
-  food: [
-    {zh:"請給我菜單", local:"Цэсээ өгөөч", pron:"tse-see u-guuch"},
-    {zh:"這個多少錢？", local:"Энэ хэдэн төгрөг вэ?", pron:"en heden tugrug ve"},
-    {zh:"好吃", local:"Амттай", pron:"amt-tai"},
-    {zh:"我不吃辣", local:"Би халуун ногоо иддэггүй", pron:"bi haluun nogoo id-deg-gui"},
-    {zh:"買單", local:"Тооцоо бодъё", pron:"too-tsoo bod-yo"},
-  ],
-  shopping: [
-    {zh:"太貴了", local:"Үнэтэй байна", pron:"un-e-tei bai-na"},
-    {zh:"可以便宜一點嗎？", local:"Хямдруулж болох уу?", pron:"hyam-druulj bolokh uu"},
-    {zh:"我要買這個", local:"Би үүнийг авъя", pron:"bi uuniig av-ya"},
-    {zh:"可以刷卡嗎？", local:"Картаар төлж болох уу?", pron:"kart-aar tulj bolokh uu"},
-  ],
-  transport: [
-    {zh:"廁所在哪裡？", local:"Жорлон хаана байна вэ?", pron:"jorlon haa-na bai-na ve"},
-    {zh:"請帶我去這裡", local:"Намайг энд хүргэж өгөөч", pron:"na-maig end khur-gej u-guuch"},
-    {zh:"多久會到？", local:"Хэр удах вэ?", pron:"her u-dakh ve"},
-    {zh:"請停車", local:"Зогсооч", pron:"zog-sooch"},
-  ],
-  emergency: [
-    {zh:"救命！", local:"Тусална уу!", pron:"tus-lana uu"},
-    {zh:"我需要醫生", local:"Надад эмч хэрэгтэй", pron:"na-dad emch khe-reg-tei"},
-    {zh:"請叫警察", local:"Цагдаа дуудаж өгөөч", pron:"tsag-daa duu-daj u-guuch"},
-    {zh:"我迷路了", local:"Би төөрсөн", pron:"bi tuur-suun"},
-  ],
+greeting: [
+{zh:"你好", local:"Сайн байна уу", pron:"sain bai-na uu"},
+{zh:"謝謝", local:"Баярлалаа", pron:"bayar-la-laa"},
+{zh:"對不起", local:"Уучлаарай", pron:"uu-chla-rai"},
+{zh:"再見", local:"Баяртай", pron:"bayar-tai"},
+{zh:"是／好", local:"Тийм", pron:"tiim"},
+{zh:"不是／不", local:"Үгүй", pron:"ugui"},
+],
+food: [
+{zh:"請給我菜單", local:"Цэсээ өгөөч", pron:"tse-see u-guuch"},
+{zh:"這個多少錢？", local:"Энэ хэдэн төгрөг вэ?", pron:"en heden tugrug ve"},
+{zh:"好吃", local:"Амттай", pron:"amt-tai"},
+{zh:"我不吃辣", local:"Би халуун ногоо иддэггүй", pron:"bi haluun nogoo id-deg-gui"},
+{zh:"買單", local:"Тооцоо бодъё", pron:"too-tsoo bod-yo"},
+],
+shopping: [
+{zh:"太貴了", local:"Үнэтэй байна", pron:"un-e-tei bai-na"},
+{zh:"可以便宜一點嗎？", local:"Хямдруулж болох уу?", pron:"hyam-druulj bolokh uu"},
+{zh:"我要買這個", local:"Би үүнийг авъя", pron:"bi uuniig av-ya"},
+{zh:"可以刷卡嗎？", local:"Картаар төлж болох уу?", pron:"kart-aar tulj bolokh uu"},
+],
+transport: [
+{zh:"廁所在哪裡？", local:"Жорлон хаана байна вэ?", pron:"jorlon haa-na bai-na ve"},
+{zh:"請帶我去這裡", local:"Намайг энд хүргэж өгөөч", pron:"na-maig end khur-gej u-guuch"},
+{zh:"多久會到？", local:"Хэр удах вэ?", pron:"her u-dakh ve"},
+{zh:"請停車", local:"Зогсооч", pron:"zog-sooch"},
+],
+emergency: [
+{zh:"救命！", local:"Тусална уу!", pron:"tus-lana uu"},
+{zh:"我需要醫生", local:"Надад эмч хэрэгтэй", pron:"na-dad emch khe-reg-tei"},
+{zh:"請叫警察", local:"Цагдаа дуудаж өгөөч", pron:"tsag-daa duu-daj u-guuch"},
+{zh:"我迷路了", local:"Би төөрсөн", pron:"bi tuur-suun"},
+],
 };
 
 function renderPhrasebook(){
-  Object.keys(phrasebook).forEach(cat=>{
-    const el = document.getElementById('phrasebook-'+cat);
-    if(!el) return;
-    el.innerHTML = '';
-    phrasebook[cat].forEach(p=>{
-      const item = document.createElement('div');
-      item.className = 'phrase-item';
-      item.innerHTML = `
-        <div class="phrase-text">
-          <div class="phrase-zh">${p.zh}</div>
-          <div class="phrase-local">${p.local}</div>
-          <div class="phrase-pron">${p.pron}</div>
-        </div>
-        <button class="speak-btn">🔊</button>
-      `;
-      item.querySelector('.speak-btn').addEventListener('click', ()=>speakText(p.local, 'mn'));
-      el.appendChild(item);
-    });
-  });
+Object.keys(phrasebook).forEach(cat=>{
+const el = document.getElementById('phrasebook-'+cat);
+if(!el) return;
+el.innerHTML = '';
+phrasebook[cat].forEach(p=>{
+const item = document.createElement('div');
+item.className = 'phrase-item';
+item.innerHTML = `
+<div class="phrase-text">
+<div class="phrase-zh">${p.zh}</div>
+<div class="phrase-local">${p.local}</div>
+<div class="phrase-pron">${p.pron}</div>
+</div>
+<button class="speak-btn">🔊</button>
+`;
+item.querySelector('.speak-btn').addEventListener('click', ()=>speakText(p.local, 'mn'));
+el.appendChild(item);
+});
+});
 }
 renderPhrasebook();
 
@@ -1255,45 +1256,45 @@ const speechLangMap = {'zh-TW':'zh-TW', 'mn':'mn-MN', 'en':'en-US', 'ko':'ko-KR'
 
 let cachedVoices = [];
 function loadVoices(){
-  if('speechSynthesis' in window){
-    cachedVoices = window.speechSynthesis.getVoices();
-  }
+if('speechSynthesis' in window){
+cachedVoices = window.speechSynthesis.getVoices();
+}
 }
 if('speechSynthesis' in window){
-  loadVoices();
-  window.speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+window.speechSynthesis.onvoiceschanged = loadVoices;
 }
 
 function findVoice(langCode){
-  if(!cachedVoices.length) loadVoices();
-  const exact = cachedVoices.find(v=>v.lang === langCode);
-  if(exact) return exact;
-  const prefix = langCode.split('-')[0];
-  return cachedVoices.find(v=>v.lang && v.lang.split('-')[0] === prefix) || null;
+if(!cachedVoices.length) loadVoices();
+const exact = cachedVoices.find(v=>v.lang === langCode);
+if(exact) return exact;
+const prefix = langCode.split('-')[0];
+return cachedVoices.find(v=>v.lang && v.lang.split('-')[0] === prefix) || null;
 }
 
 function speakText(text, langCode){
-  if(!text) return;
-  if(!('speechSynthesis' in window)){
-    alert('這台裝置／瀏覽器不支援語音播放功能。');
-    return;
-  }
-  const targetLang = speechLangMap[langCode] || 'en-US';
-  const voice = findVoice(targetLang);
-  if(!voice){
-    alert('這台裝置目前沒有「' + (langCode==='mn'?'蒙古語':targetLang) + '」的語音包，無法播放發音，建議改用文字或常用短句手冊直接給對方看。');
-    return;
-  }
-  window.speechSynthesis.cancel();
-  setTimeout(()=>{
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = targetLang;
-    utter.voice = voice;
-    utter.onerror = ()=>{
-      alert('播放失敗，請再試一次，或改用文字／常用短句手冊直接給對方看。');
-    };
-    window.speechSynthesis.speak(utter);
-  }, 80);
+if(!text) return;
+if(!('speechSynthesis' in window)){
+alert('這台裝置／瀏覽器不支援語音播放功能。');
+return;
+}
+const targetLang = speechLangMap[langCode] || 'en-US';
+const voice = findVoice(targetLang);
+if(!voice){
+alert('這台裝置目前沒有「' + (langCode==='mn'?'蒙古語':targetLang) + '」的語音包，無法播放發音，建議改用文字或常用短句手冊直接給對方看。');
+return;
+}
+window.speechSynthesis.cancel();
+setTimeout(()=>{
+const utter = new SpeechSynthesisUtterance(text);
+utter.lang = targetLang;
+utter.voice = voice;
+utter.onerror = ()=>{
+alert('播放失敗，請再試一次，或改用文字／常用短句手冊直接給對方看。');
+};
+window.speechSynthesis.speak(utter);
+}, 80);
 }
 
 /* ---------------- SPEECH: recognition (mic input) ---------------- */
@@ -1301,160 +1302,160 @@ let recognizing = false;
 let activeRecognition = null;
 
 document.getElementById('micBtn').addEventListener('click', ()=>{
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const micBtn = document.getElementById('micBtn');
-  if(!SR){
-    alert('這個瀏覽器不支援語音輸入，建議改用 Chrome 瀏覽器，或直接用打字輸入。');
-    return;
-  }
-  if(recognizing && activeRecognition){
-    activeRecognition.stop();
-    return;
-  }
-  const recognition = new SR();
-  activeRecognition = recognition;
-  recognition.lang = speechLangMap[document.getElementById('langFrom').value] || 'zh-TW';
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const micBtn = document.getElementById('micBtn');
+if(!SR){
+alert('這個瀏覽器不支援語音輸入，建議改用 Chrome 瀏覽器，或直接用打字輸入。');
+return;
+}
+if(recognizing && activeRecognition){
+activeRecognition.stop();
+return;
+}
+const recognition = new SR();
+activeRecognition = recognition;
+recognition.lang = speechLangMap[document.getElementById('langFrom').value] || 'zh-TW';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
 
-  recognition.onstart = ()=>{
-    recognizing = true;
-    micBtn.classList.add('recording');
-    micBtn.textContent = '⏹';
-  };
-  recognition.onend = ()=>{
-    recognizing = false;
-    micBtn.classList.remove('recording');
-    micBtn.textContent = '🎤';
-  };
-  recognition.onerror = (e)=>{
-    recognizing = false;
-    micBtn.classList.remove('recording');
-    micBtn.textContent = '🎤';
-    if(e.error === 'language-not-supported' || e.error === 'no-speech'){
-      alert('這個語言的語音輸入目前無法使用(蒙古文在多數瀏覽器尚未支援語音辨識)，請改用打字輸入。');
-    } else if(e.error === 'not-allowed'){
-      alert('請允許瀏覽器使用麥克風權限後再試一次。');
-    }
-  };
-  recognition.onresult = (e)=>{
-    const transcript = e.results[0][0].transcript;
-    const ta = document.getElementById('translateInput');
-    ta.value = ta.value ? ta.value + ' ' + transcript : transcript;
-  };
-  recognition.start();
+recognition.onstart = ()=>{
+recognizing = true;
+micBtn.classList.add('recording');
+micBtn.textContent = '⏹';
+};
+recognition.onend = ()=>{
+recognizing = false;
+micBtn.classList.remove('recording');
+micBtn.textContent = '🎤';
+};
+recognition.onerror = (e)=>{
+recognizing = false;
+micBtn.classList.remove('recording');
+micBtn.textContent = '🎤';
+if(e.error === 'language-not-supported' || e.error === 'no-speech'){
+alert('這個語言的語音輸入目前無法使用(蒙古文在多數瀏覽器尚未支援語音辨識)，請改用打字輸入。');
+} else if(e.error === 'not-allowed'){
+alert('請允許瀏覽器使用麥克風權限後再試一次。');
+}
+};
+recognition.onresult = (e)=>{
+const transcript = e.results[0][0].transcript;
+const ta = document.getElementById('translateInput');
+ta.value = ta.value ? ta.value + ' ' + transcript : transcript;
+};
+recognition.start();
 });
 
 document.getElementById('swapLangBtn').addEventListener('click', ()=>{
-  const from = document.getElementById('langFrom');
-  const to = document.getElementById('langTo');
-  const tmp = from.value;
-  from.value = to.value;
-  to.value = tmp;
+const from = document.getElementById('langFrom');
+const to = document.getElementById('langTo');
+const tmp = from.value;
+from.value = to.value;
+to.value = tmp;
 });
 
 document.getElementById('translateBtn').addEventListener('click', async ()=>{
-  const text = document.getElementById('translateInput').value.trim();
-  const resultEl = document.getElementById('translateResult');
-  if(!text){
-    resultEl.textContent = '請先輸入文字';
-    resultEl.classList.add('placeholder');
-    return;
-  }
-  const from = document.getElementById('langFrom').value;
-  const to = document.getElementById('langTo').value;
-  resultEl.textContent = '翻譯中…';
-  resultEl.classList.add('placeholder');
-  try{
-    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const translated = data && data.responseData && data.responseData.translatedText;
-    if(translated){
-      resultEl.classList.remove('placeholder');
-      resultEl.innerHTML = '';
-      const span = document.createElement('span');
-      span.textContent = translated;
-      const copyBtn = document.createElement('button');
-      copyBtn.className = 'copy-btn';
-      copyBtn.textContent = '複製';
-      copyBtn.style.right = '54px';
-      copyBtn.onclick = ()=>{
-        navigator.clipboard.writeText(translated).then(()=>{
-          copyBtn.textContent = '已複製';
-          setTimeout(()=>copyBtn.textContent='複製', 1500);
-        });
-      };
-      const speakBtn = document.createElement('button');
-      speakBtn.className = 'copy-btn';
-      speakBtn.textContent = '🔊';
-      speakBtn.onclick = ()=>speakText(translated, to);
-      resultEl.appendChild(span);
-      resultEl.appendChild(copyBtn);
-      resultEl.appendChild(speakBtn);
+const text = document.getElementById('translateInput').value.trim();
+const resultEl = document.getElementById('translateResult');
+if(!text){
+resultEl.textContent = '請先輸入文字';
+resultEl.classList.add('placeholder');
+return;
+}
+const from = document.getElementById('langFrom').value;
+const to = document.getElementById('langTo').value;
+resultEl.textContent = '翻譯中…';
+resultEl.classList.add('placeholder');
+try{
+const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+const res = await fetch(url);
+const data = await res.json();
+const translated = data && data.responseData && data.responseData.translatedText;
+if(translated){
+resultEl.classList.remove('placeholder');
+resultEl.innerHTML = '';
+const span = document.createElement('span');
+span.textContent = translated;
+const copyBtn = document.createElement('button');
+copyBtn.className = 'copy-btn';
+copyBtn.textContent = '複製';
+copyBtn.style.right = '54px';
+copyBtn.onclick = ()=>{
+navigator.clipboard.writeText(translated).then(()=>{
+copyBtn.textContent = '已複製';
+setTimeout(()=>copyBtn.textContent='複製', 1500);
+});
+};
+const speakBtn = document.createElement('button');
+speakBtn.className = 'copy-btn';
+speakBtn.textContent = '🔊';
+speakBtn.onclick = ()=>speakText(translated, to);
+resultEl.appendChild(span);
+resultEl.appendChild(copyBtn);
+resultEl.appendChild(speakBtn);
 
-      const gLink = document.createElement('div');
-      gLink.style.marginTop = '10px';
-      const gtUrl = 'https://translate.google.com/?sl=' + encodeURIComponent(from) +
-        '&tl=' + encodeURIComponent(to) + '&text=' + encodeURIComponent(text) + '&op=translate';
-      gLink.innerHTML = `<a href="${gtUrl}" target="_blank" rel="noopener" style="color:var(--sky-deep); font-size:12px;">🔗 這裡發不出聲音？在 Google 翻譯開啟(通常能唸出來，含蒙古語)</a>`;
-      resultEl.appendChild(gLink);
-    } else {
-      resultEl.classList.add('placeholder');
-      resultEl.textContent = '翻譯失敗，請確認網路連線後再試一次';
-    }
-  } catch(err){
-    resultEl.classList.add('placeholder');
-    resultEl.textContent = '翻譯失敗，請確認網路連線後再試一次';
-  }
+const gLink = document.createElement('div');
+gLink.style.marginTop = '10px';
+const gtUrl = 'https://translate.google.com/?sl=' + encodeURIComponent(from) +
+'&tl=' + encodeURIComponent(to) + '&text=' + encodeURIComponent(text) + '&op=translate';
+gLink.innerHTML = `<a href="${gtUrl}" target="_blank" rel="noopener" style="color:var(--sky-deep); font-size:12px;">🔗 這裡發不出聲音？在 Google 翻譯開啟(通常能唸出來，含蒙古語)</a>`;
+resultEl.appendChild(gLink);
+} else {
+resultEl.classList.add('placeholder');
+resultEl.textContent = '翻譯失敗，請確認網路連線後再試一次';
+}
+} catch(err){
+resultEl.classList.add('placeholder');
+resultEl.textContent = '翻譯失敗，請確認網路連線後再試一次';
+}
 });
 
 function initTripMap(){
-  if(tripMap) return;
-  if(typeof L === 'undefined'){
-    document.getElementById('tripMap').innerHTML =
-      '<div style="padding:20px;font-size:13px;color:var(--ink-soft);">地圖套件載入失敗，請確認網路連線後重新整理頁面，或直接用瀏覽器開啟此檔案。</div>';
-    return;
-  }
-  tripMap = L.map('tripMap', {scrollWheelZoom:false});
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom:18,
-    attribution:'&copy; OpenStreetMap contributors'
-  }).addTo(tripMap);
+if(tripMap) return;
+if(typeof L === 'undefined'){
+document.getElementById('tripMap').innerHTML =
+'<div style="padding:20px;font-size:13px;color:var(--ink-soft);">地圖套件載入失敗，請確認網路連線後重新整理頁面，或直接用瀏覽器開啟此檔案。</div>';
+return;
+}
+tripMap = L.map('tripMap', {scrollWheelZoom:false});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+maxZoom:18,
+attribution:'&copy; OpenStreetMap contributors'
+}).addTo(tripMap);
 
-  mapPoints.forEach(p=>{
-    const marker = L.circleMarker([p.lat, p.lng], {
-      radius:8,
-      color:'#FBF7EE',
-      weight:2,
-      fillColor:p.color,
-      fillOpacity:1
-    }).addTo(tripMap);
-    marker.bindPopup(
-      `<div class="popup-day">${p.day}</div><div class="popup-title">${p.name}</div>${p.note?`<div class="popup-note">${p.note}</div>`:''}<div class="popup-note" style="margin-top:6px;"><a href="${gmapUrl(p.lat,p.lng)}" target="_blank" rel="noopener" style="color:var(--sky-deep);">📍 在 Google Map 開啟</a></div>`
-    );
-    marker.regionTag = p.region;
-    marker.pointName = p.name;
-    mapMarkers.push(marker);
-  });
+mapPoints.forEach(p=>{
+const marker = L.circleMarker([p.lat, p.lng], {
+radius:8,
+color:'#FBF7EE',
+weight:2,
+fillColor:p.color,
+fillOpacity:1
+}).addTo(tripMap);
+marker.bindPopup(
+`<div class="popup-day">${p.day}</div><div class="popup-title">${p.name}</div>${p.note?`<div class="popup-note">${p.note}</div>`:''}<div class="popup-note" style="margin-top:6px;"><a href="${gmapUrl(p.lat,p.lng)}" target="_blank" rel="noopener" style="color:var(--sky-deep);">📍 在 Google Map 開啟</a></div>`
+);
+marker.regionTag = p.region;
+marker.pointName = p.name;
+mapMarkers.push(marker);
+});
 
-  fitToRegion('all');
+fitToRegion('all');
 
-  document.querySelectorAll('.map-toolbar button').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      document.querySelectorAll('.map-toolbar button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      fitToRegion(btn.dataset.view);
-    });
-  });
+document.querySelectorAll('.map-toolbar button').forEach(btn=>{
+btn.addEventListener('click', ()=>{
+document.querySelectorAll('.map-toolbar button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+fitToRegion(btn.dataset.view);
+});
+});
 }
 
 function fitToRegion(view){
-  if(!tripMap) return;
-  const pts = view==='all' ? mapMarkers : mapMarkers.filter(m=>m.regionTag===view);
-  if(!pts.length) return;
-  const bounds = L.latLngBounds(pts.map(m=>m.getLatLng()));
-  tripMap.fitBounds(bounds, {padding:[30,30]});
+if(!tripMap) return;
+const pts = view==='all' ? mapMarkers : mapMarkers.filter(m=>m.regionTag===view);
+if(!pts.length) return;
+const bounds = L.latLngBounds(pts.map(m=>m.getLatLng()));
+tripMap.fitBounds(bounds, {padding:[30,30]});
 }
 
 /* ---------------- TODO with persistence ---------------- */
@@ -1466,57 +1467,57 @@ let checkedState = {};
 function buildTodoId(groupIdx, itemIdx){ return groupIdx+'-'+itemIdx; }
 
 function renderTodos(){
-  todoContainer.innerHTML = '';
-  let remaining = 0;
-  todoGroups.forEach((g, gi)=>{
-    const groupEl = document.createElement('div');
-    groupEl.className = 'todo-group';
-    const doneCount = g.items.filter((_,ii)=>checkedState[buildTodoId(gi,ii)]).length;
-    groupEl.innerHTML = `<h3>${g.name} <span class="count">${doneCount}/${g.items.length}</span></h3>`;
-    g.items.forEach((text, ii)=>{
-      const id = buildTodoId(gi,ii);
-      const checked = !!checkedState[id];
-      if(!checked) remaining++;
-      const row = document.createElement('label');
-      row.className = 'todo-item' + (checked?' checked':'');
-      row.innerHTML = `<input type="checkbox" data-id="${id}" ${checked?'checked':''}><span class="todo-text">${text}</span>`;
-      groupEl.appendChild(row);
-    });
-    todoContainer.appendChild(groupEl);
-  });
-  todoBadge.textContent = remaining;
+todoContainer.innerHTML = '';
+let remaining = 0;
+todoGroups.forEach((g, gi)=>{
+const groupEl = document.createElement('div');
+groupEl.className = 'todo-group';
+const doneCount = g.items.filter((_,ii)=>checkedState[buildTodoId(gi,ii)]).length;
+groupEl.innerHTML = `<h3>${g.name} <span class="count">${doneCount}/${g.items.length}</span></h3>`;
+g.items.forEach((text, ii)=>{
+const id = buildTodoId(gi,ii);
+const checked = !!checkedState[id];
+if(!checked) remaining++;
+const row = document.createElement('label');
+row.className = 'todo-item' + (checked?' checked':'');
+row.innerHTML = `<input type="checkbox" data-id="${id}" ${checked?'checked':''}><span class="todo-text">${text}</span>`;
+groupEl.appendChild(row);
+});
+todoContainer.appendChild(groupEl);
+});
+todoBadge.textContent = remaining;
 }
 
 async function loadTodos(){
-  try{
-    const res = await window.storage.get(STORAGE_KEY, false);
-    checkedState = res && res.value ? JSON.parse(res.value) : {};
-  }catch(e){
-    checkedState = {};
-  }
-  renderTodos();
+try{
+const res = await window.storage.get(STORAGE_KEY, false);
+checkedState = res && res.value ? JSON.parse(res.value) : {};
+}catch(e){
+checkedState = {};
+}
+renderTodos();
 }
 
 async function saveTodos(){
-  try{
-    await window.storage.set(STORAGE_KEY, JSON.stringify(checkedState), false);
-  }catch(e){
-    console.error('Storage save failed', e);
-  }
+try{
+await window.storage.set(STORAGE_KEY, JSON.stringify(checkedState), false);
+}catch(e){
+console.error('Storage save failed', e);
+}
 }
 
 todoContainer.addEventListener('change', e=>{
-  const cb = e.target.closest('input[type=checkbox]');
-  if(!cb) return;
-  checkedState[cb.dataset.id] = cb.checked;
-  renderTodos();
-  saveTodos();
+const cb = e.target.closest('input[type=checkbox]');
+if(!cb) return;
+checkedState[cb.dataset.id] = cb.checked;
+renderTodos();
+saveTodos();
 });
 
 document.getElementById('resetTodos').addEventListener('click', async ()=>{
-  checkedState = {};
-  renderTodos();
-  await saveTodos();
+checkedState = {};
+renderTodos();
+await saveTodos();
 });
 
 loadTodos();
@@ -1530,57 +1531,57 @@ let packingState = {};
 function buildPackingId(groupIdx, itemIdx){ return groupIdx+'-'+itemIdx; }
 
 function renderPacking(){
-  packingContainer.innerHTML = '';
-  let remaining = 0;
-  packingGroups.forEach((g, gi)=>{
-    const groupEl = document.createElement('div');
-    groupEl.className = 'todo-group';
-    const doneCount = g.items.filter((_,ii)=>packingState[buildPackingId(gi,ii)]).length;
-    groupEl.innerHTML = `<h3>${g.name} <span class="count">${doneCount}/${g.items.length}</span></h3>`;
-    g.items.forEach((text, ii)=>{
-      const id = buildPackingId(gi,ii);
-      const checked = !!packingState[id];
-      if(!checked) remaining++;
-      const row = document.createElement('label');
-      row.className = 'todo-item' + (checked?' checked':'');
-      row.innerHTML = `<input type="checkbox" data-id="${id}" ${checked?'checked':''}><span class="todo-text">${text}</span>`;
-      groupEl.appendChild(row);
-    });
-    packingContainer.appendChild(groupEl);
-  });
-  packingBadge.textContent = remaining;
+packingContainer.innerHTML = '';
+let remaining = 0;
+packingGroups.forEach((g, gi)=>{
+const groupEl = document.createElement('div');
+groupEl.className = 'todo-group';
+const doneCount = g.items.filter((_,ii)=>packingState[buildPackingId(gi,ii)]).length;
+groupEl.innerHTML = `<h3>${g.name} <span class="count">${doneCount}/${g.items.length}</span></h3>`;
+g.items.forEach((text, ii)=>{
+const id = buildPackingId(gi,ii);
+const checked = !!packingState[id];
+if(!checked) remaining++;
+const row = document.createElement('label');
+row.className = 'todo-item' + (checked?' checked':'');
+row.innerHTML = `<input type="checkbox" data-id="${id}" ${checked?'checked':''}><span class="todo-text">${text}</span>`;
+groupEl.appendChild(row);
+});
+packingContainer.appendChild(groupEl);
+});
+packingBadge.textContent = remaining;
 }
 
 async function loadPacking(){
-  try{
-    const res = await window.storage.get(PACKING_KEY, false);
-    packingState = res && res.value ? JSON.parse(res.value) : {};
-  }catch(e){
-    packingState = {};
-  }
-  renderPacking();
+try{
+const res = await window.storage.get(PACKING_KEY, false);
+packingState = res && res.value ? JSON.parse(res.value) : {};
+}catch(e){
+packingState = {};
+}
+renderPacking();
 }
 
 async function savePacking(){
-  try{
-    await window.storage.set(PACKING_KEY, JSON.stringify(packingState), false);
-  }catch(e){
-    console.error('Storage save failed', e);
-  }
+try{
+await window.storage.set(PACKING_KEY, JSON.stringify(packingState), false);
+}catch(e){
+console.error('Storage save failed', e);
+}
 }
 
 packingContainer.addEventListener('change', e=>{
-  const cb = e.target.closest('input[type=checkbox]');
-  if(!cb) return;
-  packingState[cb.dataset.id] = cb.checked;
-  renderPacking();
-  savePacking();
+const cb = e.target.closest('input[type=checkbox]');
+if(!cb) return;
+packingState[cb.dataset.id] = cb.checked;
+renderPacking();
+savePacking();
 });
 
 document.getElementById('resetPacking').addEventListener('click', async ()=>{
-  packingState = {};
-  renderPacking();
-  await savePacking();
+packingState = {};
+renderPacking();
+await savePacking();
 });
 
 loadPacking();
@@ -1589,21 +1590,21 @@ loadPacking();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script>
 if('serviceWorker' in navigator){
-  window.addEventListener('load', ()=>{
-    navigator.serviceWorker.register('sw.js').then((reg)=>{
-      reg.update();
-      reg.addEventListener('updatefound', ()=>{
-        const newWorker = reg.installing;
-        if(newWorker){
-          newWorker.addEventListener('statechange', ()=>{
-            if(newWorker.state === 'activated'){
-              window.location.reload();
-            }
-          });
-        }
-      });
-    }).catch(()=>{});
-  });
+window.addEventListener('load', ()=>{
+navigator.serviceWorker.register('sw.js').then((reg)=>{
+reg.update();
+reg.addEventListener('updatefound', ()=>{
+const newWorker = reg.installing;
+if(newWorker){
+newWorker.addEventListener('statechange', ()=>{
+if(newWorker.state === 'activated'){
+window.location.reload();
+}
+});
+}
+});
+}).catch(()=>{});
+});
 }
 </script>
 </body>
