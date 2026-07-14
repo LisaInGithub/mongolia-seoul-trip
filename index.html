@@ -783,6 +783,7 @@ body:[
 {
 date:"7/31", iso:"2026-07-31", title:"特勒吉 Day 1", loc:"Terelj 國家公園",
 tag:"特勒吉", tagColor:"var(--felt)", hotel:"度假村（2人1室，附私人衛浴）",
+cost:"$190（含機場接送）",
 maps:[
 {label:"Terelj 國家公園", query:"Gorkhi-Terelj National Park"},
 {label:"龜石 Turtle Rock", query:"Turtle Rock Terelj Mongolia"},
@@ -820,6 +821,7 @@ note:"待確認：騎鷹體驗實際內容；傳統服飾體驗確切價格"
 {
 date:"8/2", iso:"2026-08-02", title:"戈壁 Day 1 出發", loc:"Eagle Valley Yoliin Am 國家公園",
 tag:"戈壁", tagColor:"var(--rust)", hotel:"戈壁 Tourist Camp（蒙古包，含晚餐）",
+cost:"$1,350（含國內機票）",
 maps:[
 {label:"Yoliin Am / Eagle Valley", query:"Yolyn Am Eagle Valley Gobi Gurvansaikhan National Park"}
 ],
@@ -1056,6 +1058,7 @@ card.innerHTML = `
 ${d.body.map(b=>`<h4>${b.h}</h4><ul>${b.items.map(it=>`<li>${it}</li>`).join('')}</ul>`).join('')}
 ${d.maps && d.maps.length ? `<h4>📍 地圖</h4><ul class="map-links">${d.maps.map(m=>`<li><a href="${mapUrl(m.query)}" target="_blank" rel="noopener">📍 ${m.label}</a></li>`).join('')}</ul>` : ''}
 <div class="hotel-line">🏨 ${d.hotel}</div>
+${d.cost?`<div class="hotel-line">💰 ${d.cost}</div>`:''}
 ${d.note?`<div class="note">⚠️ ${d.note}</div>`:''}
 </div>
 `;
