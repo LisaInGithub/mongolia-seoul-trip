@@ -540,6 +540,72 @@ flex-shrink:0;
 .speak-btn:active{background:var(--sand-deep);}
 .phrase-item{display:flex; align-items:center; justify-content:space-between; gap:10px;}
 .phrase-text{flex:1; min-width:0;}
+
+/* ---------- SEARCH ---------- */
+.search-wrap{
+position:sticky; top:0; z-index:19;
+background:var(--sand);
+border-bottom:1px solid var(--line);
+padding:10px 0;
+}
+.search-inner{max-width:640px;margin:0 auto;padding:0 16px;position:relative;}
+.search-input-box{position:relative;}
+.search-input-box input{
+width:100%;
+font-family:inherit;
+font-size:14px;
+color:var(--ink);
+background:var(--card);
+border:1px solid var(--line);
+border-radius:20px;
+padding:10px 36px 10px 14px;
+box-sizing:border-box;
+-webkit-appearance:none;
+}
+.search-input-box input::-webkit-search-cancel-button{display:none;}
+.search-clear-btn{
+position:absolute; right:8px; top:50%; transform:translateY(-50%);
+width:24px;height:24px;border-radius:50%;
+border:none;background:var(--sand-deep);color:var(--ink-soft);
+font-size:12px;cursor:pointer;
+display:flex;align-items:center;justify-content:center;
+}
+.search-results{
+display:none;
+max-height:min(60vh,420px);
+overflow-y:auto;
+background:var(--card);
+border:1px solid var(--line);
+border-radius:12px;
+margin-top:8px;
+box-shadow:0 4px 14px rgba(43,38,34,0.12);
+}
+.search-results.show{display:block;}
+.search-result{
+display:flex; align-items:flex-start; gap:10px;
+padding:10px 12px;
+border-bottom:1px solid var(--line);
+cursor:pointer;
+}
+.search-result:last-child{border-bottom:none;}
+.search-result:active{background:var(--sand);}
+.search-result-cat{
+flex-shrink:0;
+font-size:10px;font-weight:700;
+color:#fff;
+padding:3px 7px;border-radius:10px;
+white-space:nowrap;
+margin-top:1px;
+}
+.search-result-title{font-size:13.5px;font-weight:600;color:var(--ink);}
+.search-result-sub{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
+.search-empty{padding:14px;font-size:13px;color:var(--ink-soft);text-align:center;}
+.search-hit{animation:searchFlash 1.6s ease;}
+@keyframes searchFlash{
+0%{box-shadow:0 0 0 3px var(--rust);}
+70%{box-shadow:0 0 0 3px var(--rust);}
+100%{box-shadow:0 0 0 0 rgba(181,80,45,0);}
+}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
 </head>
@@ -580,6 +646,16 @@ flex-shrink:0;
 <button class="tab-btn" data-tab="translate">翻譯</button>
 <button class="tab-btn" data-tab="info">實用資訊</button>
 </nav>
+
+<div class="search-wrap" id="searchWrap">
+<div class="search-inner">
+<div class="search-input-box">
+<input type="search" id="globalSearch" placeholder="🔍 搜尋行程、待辦、行李、實用資訊…" autocomplete="off">
+<button id="searchClear" class="search-clear-btn" style="display:none;" title="清除">✕</button>
+</div>
+<div id="searchResults" class="search-results"></div>
+</div>
+</div>
 
 <main>
 
@@ -757,7 +833,7 @@ flex-shrink:0;
 </main>
 
 <footer style="text-align:center;font-size:11px;color:var(--ink-soft);padding:8px 0 12px;">
-行程手冊 v1.5 ・ 更新於 2026-07-13 16:51（台北時間） ・ <a href="#" id="contactToggle" onclick="toggleContact(event)" style="color:var(--sky-deep);text-decoration:underline;cursor:pointer;">✉️ 與我聯繫</a>
+行程手冊 v1.6 ・ 更新於 2026-07-17 16:55（台北時間） ・ <a href="#" id="contactToggle" onclick="toggleContact(event)" style="color:var(--sky-deep);text-decoration:underline;cursor:pointer;">✉️ 與我聯繫</a>
 </footer>
 <div id="contactPanel" style="display:none;max-width:480px;margin:0 auto 30px;padding:0 16px;">
 <div class="info-card" style="padding:16px;">
@@ -1051,6 +1127,7 @@ itinPanel.appendChild(seg);
 const isToday = d.iso === todayISO;
 const card = document.createElement('div');
 card.className = 'day' + (isToday?' today':'');
+card.id = 'day-'+i;
 card.innerHTML = `
 <div class="day-head" data-idx="${i}">
 <div class="day-date">${d.date}</div>
@@ -1612,6 +1689,134 @@ await savePacking();
 });
 
 loadPacking();
+
+/* ---------------- SEARCH ---------------- */
+const searchInput = document.getElementById('globalSearch');
+const searchClearBtn = document.getElementById('searchClear');
+const searchResultsEl = document.getElementById('searchResults');
+const searchCatColor = {'行程':'var(--rust)', '待辦':'var(--sky-deep)', '行李':'var(--seoul-deep)', '資訊':'var(--felt)'};
+
+function flashEl(el){
+if(!el) return;
+el.classList.remove('search-hit');
+void el.offsetWidth;
+el.classList.add('search-hit');
+setTimeout(()=>el.classList.remove('search-hit'), 1600);
+}
+
+function goToTab(tabName){
+const btn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+if(btn) btn.click();
+}
+
+function buildSearchIndex(){
+const idx = [];
+days.forEach((d,i)=>{
+const parts = [d.date, d.title, d.loc, d.hotel, d.cost, d.note, ...d.body.flatMap(b=>[b.h, ...b.items])].filter(Boolean);
+idx.push({
+cat:'行程', title:`${d.date}　${d.title}`, sub:d.loc, text:parts.join(' '),
+go:()=>{
+goToTab('itinerary');
+const card = document.getElementById('day-'+i);
+if(!card) return;
+card.classList.add('open');
+requestAnimationFrame(()=>{ card.scrollIntoView({behavior:'smooth', block:'start'}); flashEl(card); });
+}
+});
+});
+todoGroups.forEach((g,gi)=>{
+g.items.forEach((text,ii)=>{
+idx.push({
+cat:'待辦', title:text, sub:g.name, text:text+' '+g.name,
+go:()=>{
+goToTab('todo');
+requestAnimationFrame(()=>{
+const row = todoContainer.querySelector(`input[data-id="${buildTodoId(gi,ii)}"]`)?.closest('.todo-item');
+if(!row) return;
+row.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(row);
+});
+}
+});
+});
+});
+packingGroups.forEach((g,gi)=>{
+g.items.forEach((text,ii)=>{
+idx.push({
+cat:'行李', title:text, sub:g.name, text:text+' '+g.name,
+go:()=>{
+goToTab('packing');
+requestAnimationFrame(()=>{
+const row = packingContainer.querySelector(`input[data-id="${buildPackingId(gi,ii)}"]`)?.closest('.todo-item');
+if(!row) return;
+row.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(row);
+});
+}
+});
+});
+});
+document.querySelectorAll('#panel-info .info-card').forEach((card,i)=>{
+if(!card.id) card.id = 'info-card-'+i;
+const h3 = card.querySelector('h3');
+idx.push({
+cat:'資訊', title: h3 ? h3.textContent : '實用資訊', sub:'', text: card.textContent,
+go:()=>{
+goToTab('info');
+requestAnimationFrame(()=>{ card.scrollIntoView({behavior:'smooth', block:'start'}); flashEl(card); });
+}
+});
+});
+return idx;
+}
+
+const searchIndex = buildSearchIndex();
+
+function runSearch(query){
+const q = query.trim().toLowerCase();
+if(!q){
+searchResultsEl.classList.remove('show');
+searchResultsEl.innerHTML = '';
+return;
+}
+const matches = searchIndex.filter(item => item.text.toLowerCase().includes(q)).slice(0, 30);
+searchResultsEl.innerHTML = '';
+if(!matches.length){
+searchResultsEl.innerHTML = `<div class="search-empty">找不到符合「${query}」的內容</div>`;
+} else {
+matches.forEach(m=>{
+const row = document.createElement('div');
+row.className = 'search-result';
+row.innerHTML = `<span class="search-result-cat" style="background:${searchCatColor[m.cat]}">${m.cat}</span><div><div class="search-result-title">${m.title}</div>${m.sub?`<div class="search-result-sub">${m.sub}</div>`:''}</div>`;
+row.addEventListener('click', ()=>{
+m.go();
+searchInput.value = '';
+searchClearBtn.style.display = 'none';
+searchResultsEl.classList.remove('show');
+searchInput.blur();
+});
+searchResultsEl.appendChild(row);
+});
+}
+searchResultsEl.classList.add('show');
+}
+
+searchInput.addEventListener('input', ()=>{
+searchClearBtn.style.display = searchInput.value ? 'flex' : 'none';
+runSearch(searchInput.value);
+});
+searchInput.addEventListener('focus', ()=>{ if(searchInput.value.trim()) searchResultsEl.classList.add('show'); });
+searchClearBtn.addEventListener('click', ()=>{
+searchInput.value = '';
+searchClearBtn.style.display = 'none';
+runSearch('');
+searchInput.focus();
+});
+document.addEventListener('click', (e)=>{
+if(!e.target.closest('.search-inner')) searchResultsEl.classList.remove('show');
+});
+
+const searchWrapEl = document.getElementById('searchWrap');
+const navTabsEl = document.querySelector('nav.tabs');
+if(searchWrapEl && navTabsEl) searchWrapEl.style.top = navTabsEl.offsetHeight + 'px';
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
